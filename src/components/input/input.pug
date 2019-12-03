@@ -1,0 +1,17 @@
+//-
+  options.name - form element name
+  options.type - input type
+  options.placeholder - input placeholder
+  options.required - input required
+  options.label - подпись к checkbox и radio
+
+mixin input(options)
+  .input
+    label.input__label= options.label
+      - if (options.type === "text" || options.type === "email" || options.type === "password" || options.type === "date")
+        input.input__field(type = options.type, 
+                           name = options.name, 
+                           placeholder = options.placeholder,
+                           required = options.required)
+
+

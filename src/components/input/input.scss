@@ -1,0 +1,42 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+
+  &__field {
+    margin-top: 5px;
+    width: 320px;
+    height: 44px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: 1px solid $dshade-25;
+    border-radius: 4px;
+  
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    &::placeholder {
+        /* Dark 25% */
+      color: $dshade-25;
+    }
+    &:hover,
+    &:focus {
+      border-color: $dshade-50;
+      outline: none;
+      &::placeholder {
+        color: $dshade-75;
+      }
+    }
+  }
+  &__label {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    /* Dark 100% */
+    color: $dshade-100;
+  }
+}
+  
