@@ -6,8 +6,8 @@ const fs = require('fs');
 
 const PATHS = {
   src: path.join(__dirname, "../src"),
-  dist: path.join(__dirname, "../dist"),
-  assets: "assets" 
+  dist: path.join(__dirname, "../dist/"),
+  assets: "assets/" 
 }
 
 const PAGES_DIR = `${PATHS.src}/pug/pages`;
@@ -22,9 +22,9 @@ module.exports = {
     app: PATHS.src
   },
   output: {
-    filename: `${PATHS.assets}/js/[name].js`,
+    filename: `${PATHS.assets}js/[name].js`,
     path: PATHS.dist,
-    // publicPath: '/'
+    publicPath: './'
   },
 
   module: {
@@ -105,7 +105,7 @@ module.exports = {
   
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}/css/[name].css`,
+      filename: `${PATHS.assets}css/[name].css`,
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
     // new htmlWebpackPlugin({
@@ -114,8 +114,8 @@ module.exports = {
     //   filename: "./index.html"
     // }),
     new copyWebpackPlugin([
-      { from: `${PATHS.src}/img/`, to: `${PATHS.assets}/img/` },
-      { from: `${PATHS.src}/fonts/`, to: `${PATHS.assets}/fonts/` },
+      { from: `${PATHS.src}/img/`, to: `${PATHS.assets}img/` },
+      { from: `${PATHS.src}/fonts/`, to: `${PATHS.assets}fonts/` },
       { from: `${PATHS.src}/static/`, to: "" },
     ]),
 
