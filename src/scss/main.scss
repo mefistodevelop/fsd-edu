@@ -1,0 +1,16 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+@import "utils/libs.scss";
+@import "utils/fonts.scss";
+@import "uikit.scss";
+@import "../components/uikit-header/uikit-header.scss";
+@import "../components/uikit-color/uikit-color.scss";
+@import "../components/uikit-types/uikit-types.scss";

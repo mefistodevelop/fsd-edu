@@ -1,0 +1,24 @@
+extends ../templates/uikit-main.pug
+include ../mixins/uikit.pug
+
+block content
+  section.colors-type
+    .colors-type__header
+      +uikit-header
+    .colors-type__wrapper
+      .colors-type__colors
+        ul.color
+          +uikit-color("Dark Shade 100%", "#1F2041", "dshade-100")
+          +uikit-color("Dark Shade 75%", "#1F2041", "dshade-75")
+          +uikit-color("Dark Shade 50%", "#1F2041", "dshade-50")
+          +uikit-color("Dark Shade 25%", "#1F2041", "dshade-25")
+          +uikit-color("Dark Shade 5%", "#1F2041", "dshade-5")
+          +uikit-color("Purple", "#BC9CFF", "purple")
+          +uikit-color("Green", "#6FCF97", "green")
+
+      .colors-type__types
+        ul.types
+          +uikit-types("H1", "This one is the sub-section or widget title", "big-title")
+          +uikit-types("H2", "Next one is the item title inside widgets", "middle-title")
+          +uikit-types("H3", "This is a label or CTA text", "small-title")
+          +uikit-types("Body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.", "main-text")

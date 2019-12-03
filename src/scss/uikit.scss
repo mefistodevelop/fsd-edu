@@ -1,0 +1,29 @@
+.colors-type {
+  width: 1440px;
+  padding-bottom: 145px;
+  &__wrapper {
+    display: flex;
+    padding-left: 150px;
+    padding-right: 191px;
+  }
+
+  &__header {
+    margin-bottom: 64px;
+  }
+
+  &__colors {
+    width: 270px;
+    margin-right: 430px;
+  }
+
+  &__types {
+    display: flex;
+    width: 403px;
+
+    .types {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}

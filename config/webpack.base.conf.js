@@ -24,7 +24,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].js`,
     path: PATHS.dist,
-    publicPath: './'
+    publicPath: '/'
   },
 
   module: {
@@ -50,6 +50,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: "[name].[ext]",
+          outputPath: `${PATHS.assets}img`,
         },
         exclude: `${PATHS.src}/fonts`
       },
