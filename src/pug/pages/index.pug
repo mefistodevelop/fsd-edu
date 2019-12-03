@@ -22,3 +22,17 @@ block content
           +uikit-types("H2", "Next one is the item title inside widgets", "middle-title")
           +uikit-types("H3", "This is a label or CTA text", "small-title")
           +uikit-types("Body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.", "main-text")
+
+  section.form-elements
+    .form-elements__header
+      +uikit-header
+    .form-elements__wrapper
+      .form-elements__item
+        +input({type: "email", name: "email", placeholder: "Email", label: "text field"})
+      .form-elements__item
+        +input({type: "text", name: "text", placeholder: "This is pretty awesome", label:"text field"})
+      .form-elements__item
+        +input({type: "text", name: "date", placeholder: "ДД.ММ.ГГГГ", label: "masked text field"})
+      
+
+
