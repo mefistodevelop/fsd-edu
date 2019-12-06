@@ -1,4 +1,9 @@
+//- 
+    options.style - определяет вид кнопки (default/bordered/ghost/big)
+    options.text - текст кнопки
+    options.type - тип кнопки (submit/button/reset)
+
 mixin button(options)
   - var className= ""
-  - className = options.type ? "button button_" + options.type : ""
-  button(class= className)= options.text
+  - className = options.style ? "button button_" + options.style : ""
+  button(class= className type= options.type)= options.text
