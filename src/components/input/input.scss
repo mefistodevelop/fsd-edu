@@ -17,7 +17,6 @@
     font-size: 14px;
     line-height: 24px;
     &::placeholder {
-        /* Dark 25% */
       color: $dshade-25;
     }
     &:hover,
@@ -35,8 +34,59 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    /* Dark 100% */
     color: $dshade-100;
+
+    &_radio {
+      position: relative;
+      padding-left: 25px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      color: $dshade-50;
+
+      cursor: pointer;
+    }
+  }
+
+  &__radio {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 3px;
+    left: -5px;
+    width: 20px;
+    height: 20px;
+    background: $white;
+    border: 1px solid $dshade-25;
+    border-radius: 10px;
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 3px;
+      left: 3px;
+      width: 12px;
+      height: 12px;
+      background: $gradient-purple;
+      border-radius: 10px;
+    }
+  }
+
+  &__radio:checked {
+    &~ .input__checkmark::after{
+      display: block;
+    }
+    &+ .input__inner {
+      color: $dshade-75;
+    }
   }
 }
   

@@ -4,14 +4,23 @@
   options.placeholder - input placeholder
   options.required - input required
   options.label - подпись к checkbox и radio
+  options.checked - выбранный по умолчанию radio/checkbox
 
 mixin input(options)
   .input
-    label.input__label= options.label
       - if (options.type === "text" || options.type === "email" || options.type === "password" || options.type === "date")
+      label.input__label= options.label  
         input.input__field(type = options.type, 
                            name = options.name, 
                            placeholder = options.placeholder,
                            required = options.required)
+
+  - if (options.type === "radio" || options.type === "checkbox")
+    label(class = "input__label_" + options.type)
+      input(class = "input__" + options.type type = options.type, name = "options.name" checked = options.checked)
+      .input__inner= options.label
+      span(class = "input__checkmark input__checkmark_" + options.type)
+      
+
 
 
