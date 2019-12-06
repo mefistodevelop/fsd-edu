@@ -1,0 +1,4 @@
+mixin button(options)
+  - var className= ""
+  - className = options.type ? "button button_" + options.type : ""
+  button(class= className)= options.text

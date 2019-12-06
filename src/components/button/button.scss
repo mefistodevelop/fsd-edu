@@ -1,0 +1,77 @@
+.button {
+  margin: 0;
+  padding: 0;
+
+  width: 99px;
+  height: 44px;
+  border: none;
+  border-radius: 22px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  background: $gradient-purple;
+  color: $white;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &_default {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+
+  &_bordered {
+    margin: 2px;
+    position: relative;
+    width: 95px;
+    height: 40px;
+    background: $white;
+    color: $purple;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: -2px;
+      border-radius: 22px;
+      background: $gradient-purple;
+      z-index: -1;
+    }
+    &:hover {
+      &::before {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &_ghost {
+    background: transparent;
+    color: $purple;
+
+    &:hover {
+      color: $dshade-50;
+    }
+  }
+
+  &_big {
+    position: relative;
+    width: 320px;
+    text-align: center;
+    &:hover {
+      opacity: 0.5;
+    }
+    &::after {
+      position: absolute;
+      font-family: 'icomoon';
+      content: "\e909";
+      right: 13px;
+      font-size: 20px;
+    }
+  }
+}
