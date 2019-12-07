@@ -11,8 +11,8 @@
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
-  background: $gradient-purple;
-  color: $white;
+  background: $gradient-main;
+  color: #FFFFFF;
   &:hover,
   &:focus {
     cursor: pointer;
@@ -32,8 +32,8 @@
     position: relative;
     width: 95px;
     height: 40px;
-    background: $white;
-    color: $purple;
+    background: #FFFFFF;
+    color: $main;
     &::before {
       content: "";
       position: absolute;
@@ -43,7 +43,7 @@
       left: 0;
       margin: -2px;
       border-radius: 22px;
-      background: $gradient-purple;
+      background: $gradient-main;
       z-index: -1;
     }
     &:hover,
@@ -56,11 +56,11 @@
 
   &_ghost {
     background: transparent;
-    color: $purple;
+    color: $main;
 
     &:hover,
     &:focus {
-      color: $dshade-50;
+      color: $shade-50;
     }
   }
 
