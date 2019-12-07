@@ -66,7 +66,9 @@
     width: 20px;
     height: 20px;
     background: $white;
-    border: 1px solid $dshade-25;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $dshade-25;
     &::after,
     &::before {
       content: "";
@@ -107,7 +109,12 @@
     }
   }
 
+  &
+
   &__radio:checked {
+    &~ .input__checkmark_radio {
+      border-color: $purple;
+    }
     &~ .input__checkmark::after {
       display: block;
     }
@@ -117,12 +124,12 @@
   }
 
   &__checkbox:checked {
+    &~ .input__checkmark_checkbox {
+      border-color: $purple;
+    }
     &~ .input__checkmark_checkbox::after,
     &~ .input__checkmark_checkbox::before{
       display: block;
-    }
-    &+ .input__inner {
-      color: $dshade-75;
     }
   }
 }
