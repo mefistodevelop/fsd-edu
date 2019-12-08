@@ -1,0 +1,14 @@
+.rate-button {
+  display: inline-block;
+  width: 120px;
+  font-family: "icomoon";
+  font-size: 24px;
+  line-height: 20px;
+
+  &__item {
+    color: $main;
+    background: $gradient-main;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
