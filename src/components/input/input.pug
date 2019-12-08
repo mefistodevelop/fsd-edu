@@ -21,7 +21,7 @@ mixin input(options)
       label(class = "input__label_" + options.type)
         input(class = "input__" + options.type 
               type = options.type, 
-              name = "options.name", 
+              name = options.name, 
               checked = options.checked, 
               value = options.value
         )
