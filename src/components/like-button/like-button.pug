@@ -1,0 +1,8 @@
+//- options.count - количество лайков
+    options.checked - выделение по умолчанию
+
+mixin like-button(options)
+  .like-button
+    label.like-button__label
+      input.like-button__item(type="checkbox" name="like" checked=options.checked)
+      span.like-button__counter= options.count

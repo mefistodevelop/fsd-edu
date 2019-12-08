@@ -1,0 +1,71 @@
+.like-button {
+  &__label {
+    display: inline-block;
+    position: relative;
+    width: 38px;
+    height: 18px;
+    color: $shade-25;
+    cursor: pointer;
+    background: #ffffff;
+    border-radius: 10px;
+  }
+
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    padding: 0;
+    opacity: 0;
+  }
+
+  &__counter {
+    position: absolute;
+    top: 2px;
+    left: 20px;
+    font-size: 10px;
+    line-height: 11px;
+    border: 1px solid transparent;
+    &::before {
+      //like icon
+      content: "\e903";
+      position: absolute;
+      top: 0;
+      left: -17px;
+      font-family: "icomoon";
+      color: $shade-25;
+      font-size: 10px;
+      line-height: 11px;
+    }
+    &::after {
+      //button border
+      content: "";
+      position: absolute;
+      top: -3px;
+      right: 0;
+      bottom: 0;
+      left: -21px;
+      background: $shade-25;
+      width: 40px;
+      height: 20px;
+      border-radius: 10px;
+      z-index: -1;
+      margin: -1px;
+    }
+  }
+
+  &__item:checked {
+    ~ .like-button__counter {
+      color: $main;
+      &::before {
+        content: "\e906";
+        color: $main;
+      }
+      &::after {
+        background: $gradient-main;
+      }
+    }
+  }
+}
