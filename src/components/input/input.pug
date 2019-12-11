@@ -9,11 +9,11 @@
   options.isButton - если true, добавляет в поле инпута кнопку отправки данных этого поля
 
 mixin input(options)
-  div(class = options.isButton ? "input input_button" : "input")
+  .input
     - if (options.type === "text" || options.type === "email" || options.type === "password" || options.type === "date")
       - if (options.isButton === true)
           form.input__form(action="blank-link" method="post")
-            label(class= "input__label")= options.label  
+            label(class= "input__label input__label_button")= options.label  
               input(class= "input__field",
                     type = options.type, 
                     name = options.name, 
@@ -39,5 +39,8 @@ mixin input(options)
               checked = options.checked, 
               value = options.value
         )
-        .input__inner= options.label
+        div(class= options.style ? "input__inner input__inner_rich" : "input__inner")
+          - if (options.style === "rich")
+            p.input__title= options.label
+          div(class= options.style ? "input__text input__text_rich" : "input__text")= options.text
         span(class = "input__checkmark input__checkmark_" + options.type)

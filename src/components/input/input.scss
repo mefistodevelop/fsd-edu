@@ -1,10 +1,6 @@
 .input {
   display: flex;
   flex-direction: column;
-  width: 320px;  
-  &_button {
-    width: 267px;
-  }
 
   &__field {
     margin-top: 5px;
@@ -38,6 +34,7 @@
   }
 
   &__label {
+    width: 320px;
     position: relative;
     font-family: Montserrat;
     font-weight: 700;
@@ -46,9 +43,14 @@
     text-transform: uppercase;
     color: $shade-100;
 
+    &_button {
+      width: 267px;
+    }
+
     &_radio,
     &_checkbox {
-      padding-left: 25px;
+      position: relative;
+      padding-left: 30px;
       font-weight: 400;
       font-size: 14px;
       line-height: 24px;
@@ -87,10 +89,34 @@
     cursor: pointer;
   }
 
+  &__inner {
+    &_rich {
+      max-width: 236px;
+      padding-top: 5px;
+    }
+  }
+
+  &__text {
+    &_rich {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    color: $shade-75;
+  }
+
   &__checkmark {
     position: absolute;
     top: 3px;
-    left: -5px;
+    left: 0;
     width: 20px;
     height: 20px;
     background: #FFFFFF;
@@ -144,7 +170,7 @@
     &~ .input__checkmark::after {
       display: block;
     }
-    &+ .input__inner {
+    &+ .input__text {
       color: $shade-75;
     }
   }
