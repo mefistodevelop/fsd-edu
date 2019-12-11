@@ -1,11 +1,14 @@
 .input {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 320px;  
+  &_button {
+    width: 267px;
+  }
 
   &__field {
     margin-top: 5px;
-    width: 320px;
+    width: 100%;
     height: 44px;
     padding-left: 12px;
     padding-right: 12px;
@@ -28,7 +31,14 @@
       }
     }
   }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__label {
+    position: relative;
     font-family: Montserrat;
     font-weight: 700;
     font-size: 12px;
@@ -38,7 +48,6 @@
 
     &_radio,
     &_checkbox {
-      position: relative;
       padding-left: 25px;
       font-weight: 400;
       font-size: 14px;
@@ -46,6 +55,25 @@
       color: $shade-50;
       cursor: pointer;
     }
+  }
+
+  &__button {
+    position: absolute;
+    top: 29px;
+    right: 10px;
+    margin: 0;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+    font-family: icomoon;
+    font-size: 24px;
+    color: $main;
+    background: $gradient-main;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
   }
 
   &__radio,
