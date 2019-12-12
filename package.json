@@ -25,10 +25,12 @@
     "cssnano": "^4.1.10",
     "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "ion-rangeslider": "^2.3.0",
     "jquery": "^3.4.1",
     "jquery-mask-plugin": "^1.14.16",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
+    "nouislider": "^14.1.0",
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
     "pug": "^2.0.4",
@@ -38,6 +40,7 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "wnumb": "^1.2.0"
   }
 }
