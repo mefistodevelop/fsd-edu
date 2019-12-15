@@ -1,12 +1,9 @@
 import $ from 'jquery';
 
 $(document).ready(function() {
-  let name = '';
-  let score = '';
 
   $('.dropdown__label').each(function(i) {
     $(this).add('.dropdown__arrow', this).on('click', function() {
-      // $('.dropdown__top').eq(i).val(`${name}: ${score}`);
       $('.dropdown__menu').eq(i).toggleClass('hidden');
     });
   });
@@ -18,56 +15,85 @@ $(document).ready(function() {
         $(".dropdown__menu").addClass('hidden');
     }
   });
-
-
+  let obj = {};
   function increment() {
     $('.dropdown__control_plus').on('click', function() {
-      let num = +$(this).prev().text();
+      let item = $(this).parents('label:first');
+      let items = $(this).parents('li:first');
+      let input = item.find('.dropdown__top');
+      let name = items.find('.dropdown__element').text();
+      let num = +items.find('.dropdown__score').text();
       if (num < 10) {
         $(this).prev().text(num + 1);
-        score++;
+        num++;
+        obj[name] = num;
+        // console.log(obj);
       }
-     
-      $('.dropdown__top').val(`${name}: ${score}`);
+      let str = '';
+      for (let item in obj) {
+        str += `${item} ${obj[item]} `;
+      }
+      input.val(str);
+
+      // if (name === "спальни") {
+      //   if (num === 1) {
+      //     input.val(`${num} спальня`);
+      //   }
+      //   else if (num > 1 && num < 5) {
+      //     input.val(`${num} спальни`);
+      //   }
+      //   else if (num >= 5 && num <= 10) {
+      //     input.val(`${num} спален`);
+      //   }
+      // }
+      // else if (name === "кровати") {
+      //   if (num === 1) {
+      //     input.val(`${num} кровать`);
+      //   }
+      //   else if (num > 1 && num < 5) {
+      //     input.val(`${num} кровати`);
+      //   }
+      //   else if (num >= 5 && num <= 10) {
+      //     input.val(`${num} кроватей`);
+      //   }
+      // }
+      // else if (name === "ванные комнаты") {
+      //   if (num === 1) {
+      //     input.val(`${num} ванная комната`);
+      //   }
+      //   else if (num > 1 && num < 5) {
+      //     input.val(`${num} ванные комнаты`);
+      //   }
+      //   else if (num >= 5 && num <= 10) {
+      //     input.val(`${num} ванных комнат`);
+      //   }
+      // }
+      // input.val(`${num} ${name}`);
     });
   }
 
   function decrement() {
     $('.dropdown__control_minus').on('click', function() {
-      let num = +$(this).next().text();
+      let item = $(this).parents('label:first');
+      let items = $(this).parents('li:first');
+      let input = item.find('.dropdown__top');
+      let name = items.find('.dropdown__element').text();
+      let num = +items.find('.dropdown__score').text();
       if (num > 0) {
-        $(this).next().text(num - 1);
-        score--;
+        $(this).prev().text(num - 1);
+        num--;
+        obj[name] = num;
+        console.log(obj);
       }
+      let str = '';
+      for (let item in obj) {
+        str += `${item} ${obj[item]} `;
+      }
+      input.val(str);
     });
   }
 
   increment();
-  decrement();
-
-
-  // function doit() {
-  //   $('.dropdown__control_plus').on('click', function() {
-  //       $('.dropdown__top').val(`${name} + ${score}`);
-  //   });
-  // }
-  // doit();
-//   function doit() {
-//     let name = '';
-//     let score = '';
-
-    // $('.dropdown__item').each(function(z){
-    //   let datas = {};
-    //   let name = $('.dropdown__element').eq(z).text();
-    //   let score = $('.dropdown__score').eq(z).text();
-    //   datas += {name: score};
-    //   console.log(datas);
-    // });
-    // score.on('change', ()=>{
-    //   $('.dropdown__top').val(`${name}: ${score}`);
-    // });
-//   }
-// doit();
-  
+  decrement();  
 
 });
