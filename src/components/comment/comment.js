@@ -1,0 +1,1 @@
+require('./img/avatar-murad.jpg');
