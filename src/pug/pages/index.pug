@@ -27,12 +27,84 @@ block content
     .form-elements__header
       +uikit-header
     .form-elements__wrapper
-      .form-elements__item
-        +input({type: "email", name: "email", placeholder: "Email", label: "text field"})
-      .form-elements__item
-        +input({type: "text", name: "text", placeholder: "This is pretty awesome", label:"text field"})
-      .form-elements__item
-        +input({type: "text", name: "date", placeholder: "ДД.ММ.ГГГГ", label: "masked text field"})
+      .form-elements__fields-wrapper
+        .form-elements__text-fields
+          .form-elements__text-field
+            +input({type: "email", name: "email", placeholder: "Email", label: "text field", required: "true"})
+          .form-elements__text-field
+            +input({type: "text", name: "text", placeholder: "This is pretty awesome", label:"text field"})
+          .form-elements__text-field         
+            +input({type: "text", name: "date", placeholder: "ДД.ММ.ГГГГ", label: "masked text field"})
+          .form-elements__text-field
+            +input({type: "email", name: "email", placeholder: "Email", label: "subscription text field", isButton: true})
       
+      +button({style: "default", text: "click me"})
+      +button({style: "bordered", text: "click me", type: "reset"})
+      +button({style: "ghost", text: "click me"})
+      +button({style: "big", text: "перейти к оплате", type: "submit"})
+
+      +input({type: "radio", text: "Мужчина", name: "radio1", checked: "checked"})
+      +input({type: "radio", text: "Женщина", name: "radio1"})
+      +input({type: "checkbox", text: "check it", name: "check it"})
+      +input({type: "checkbox", text: "check it 2", name: "check it twice"})
+      +input({type: "checkbox", text: "check it 4", name: "check it thrice"})
+
+      +rate-button(3)
+
+      +like-button({count: 2})
+      +like-button({count: 12, checked: "checked"})
+
+      +toggle({text: "Получать спецпредложения"})
+      +toggle({text: "Получать спецпредложения", checked: "checked"})
+
+      +feature({icon: "smile", title: "Комфорт", descr: "Шумопоглощающие стены"})
+      +feature({icon: "city", title: "Комфорт", descr: "Шумопоглощающие стены"})
+      +feature({icon: "fire", title: "Комфорт", descr: "Шумопоглощающие стены"})
+
+      +list({title: "bullet list", items: ['Нельзя с питомцами', 
+                                          'Без вечеринок и мероприятий', 
+                                          'Время прибытия — после 13:00, а выезд до 12:00'
+                                          ]})
+
+      +input({type: "checkbox", style: "rich", label: "Широкий коридор", text: "Ширина коридоров в номере не менее 91 см.", name: "check it thrice"})
+      +input({type: "checkbox", style: "rich", label: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист и проводит до номера.", name: "check it thrice"})
 
 
+      +pagination(['blank.link', 
+                    'blank.link', 
+                    'blank.link', 
+                    'blank.link', 
+                    'blank.link', 
+                    'blank.link', 
+                    'blank.link', 
+                    'blank.link',
+                    ])
+
+      +range-slider({title: "range slider"})
+
+      +dropdown({label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты']})
+      +dropdown({label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты']})
+
+      +comment({src: "assets/img/avatar-murad.jpg", time: "5 дней назад", name: 'Мурад Сарафанов', like: {count: "12", checked: "checked"}, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+
+      +checkbox-list({
+                      title: "expandable checkbox list",
+                      items: [
+                        {text:"item1"}, 
+                        {text:"item2", checked: "checked"}, 
+                        {text:"item3"}
+                        ]
+                      })   
+
+      +checkbox-list({
+                      title: "expandable checkbox list",
+                      items: [
+                        {text:"item1"}, 
+                        {text:"item2", checked: "checked"}, 
+                        {text:"item3"}
+                        ]
+                      })      
+      .drop-test_small
+        +dropdown-date({label: "date Dropdown", name: "dropdown-date", placeholder: "ДД.ММ.ГГГГ"})
+      .drop-test
+        +dropdown-date({type: "filter", label: "filter date dropdown", name: "dropdown-date", placeholder: "19 авг - 23 авг"})

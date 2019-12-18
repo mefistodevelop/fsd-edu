@@ -38,7 +38,25 @@
     padding-bottom: 147px;
   }
 
-  &__item {
+  &__fields-wrapper {
+    margin-right: 126px;
+  }
+
+  &__text-fields {
+    margin-bottom: 40px;
+  }
+
+  &__text-field {
     margin-bottom: 20px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.drop-test {
+  width: 266px;
+  &_small {
+    width: 150px;
   }
 }
