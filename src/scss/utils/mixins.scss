@@ -1,0 +1,7 @@
+@mixin label {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: $shade-100;
+}

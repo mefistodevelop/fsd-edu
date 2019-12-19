@@ -31,7 +31,7 @@ $(document).ready(function() {
       }
       let str = '';
       for (let item in obj) {
-        str += `${item} ${obj[item]} `;
+        str += `${obj[item]} ${item}, `;
       }
       input.val(str);
 

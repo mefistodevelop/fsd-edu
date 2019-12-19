@@ -29,8 +29,10 @@
 }
 
 .form-elements{
+  width: 1440px;
+
   &__header {
-    margin-bottom: 65px;
+    margin-bottom: 62px;
   }
   &__wrapper {
     padding-left: 141px;
@@ -38,25 +40,238 @@
     padding-bottom: 147px;
   }
 
-  &__fields-wrapper {
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 58px;
+  }
+
+  &__col-1 {
+    max-width: 320px;
     margin-right: 126px;
   }
 
-  &__text-fields {
+  &__fields {
     margin-bottom: 40px;
   }
 
-  &__text-field {
+  &__field {
     margin-bottom: 20px;
     &:last-of-type {
       margin-bottom: 0;
     }
-  }
-}
+    &:nth-last-of-type(2) {
+      margin-bottom: 41px;
+    }
 
-.drop-test {
-  width: 266px;
-  &_small {
-    width: 150px;
+    &_dropdowns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 42px;
+      margin-bottom: 41px;
+    }
+  }
+
+
+  &__col-2 {
+    max-width: 260px;
+    margin-right: 132px;
+  }
+
+  &__checkboxes {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 43px;
+    max-width: 245px;
+    border: none;
+    &-legend {
+      @include label;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__checkbox {
+    margin-bottom: 6px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__radio-buttons {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 41px;
+    max-width: 220px;
+    border: none;
+    &-legend {
+      @include label;
+      margin-bottom: 14px;
+    }
+    
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__toggles {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 44px;
+    border: none;
+    &-legend {
+      @include label;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__toggle {
+    &:first-of-type {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__likes {
+    margin-bottom: 40px;
+    &-label {
+      @include label;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 18px;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 88px;
+    }
+  }
+
+  &__rates {
+    &-label {
+      @include label;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 18px;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 260px;
+    }
+  }
+
+  &__col-3 {
+    max-width: 320px;
+  }
+
+  &__range-slider {
+    padding-top: 2px;
+    padding-left: 1px;
+    margin-bottom: 42px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 42px;
+
+    &-label {
+      @include label;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 30px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__pagination {
+    padding-left: 2px;
+
+    &-label {
+      @include label;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__middle {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 256px;
+  }
+
+  &__dropdown-rooms {
+    margin-right: 180px;
+  }
+
+  &__dropdown-guests {
+    width: 320px;
+  }
+
+  &__lists {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 29px;
+  }
+
+  &__checkbox-list {
+    max-width: 266px;
+    margin-right: 180px;
+  }
+
+  &__expandable-checkbox {
+    &:first-of-type {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__rich-checkboxes {
+    margin-right: 138px;
+    &-label {
+      @include label;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__rich-checkbox {
+    max-width: 255px;
+    &:first-of-type {
+      margin-bottom: 7px;
+      max-width: 230px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__features {
+    margin-right: 167px;
+    max-width: 291px;
+  }
+
+  &__feature {
+    &:first-of-type {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__comment {
+    padding-top: 14px;
+    max-width: 711px;
   }
 }

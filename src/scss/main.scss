@@ -10,6 +10,7 @@ body {
 
 @import "utils/libs.scss";
 @import "utils/vars.scss";
+@import "utils/mixins.scss";
 @import "utils/fonts.scss";
 @import "uikit.scss";
 @import "../components/uikit-header/uikit-header.scss";
@@ -28,3 +29,4 @@ body {
 @import "../components/comment/comment.scss";
 @import "../components/checkbox-list/checkbox-list.scss";
 @import "../components/dropdown-date/dropdown-date.scss";
+@import "../components/dropdown-guests/dropdown-guests.scss";

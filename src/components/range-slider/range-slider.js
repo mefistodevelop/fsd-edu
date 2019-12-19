@@ -7,7 +7,7 @@ noUiSlider.create(handlesSlider, {
     start: [5000, 10000],
     range: {
         'min': [0],
-        'max': [15000]
+        'max': [16100]
     },
     format: wNumb({
       decimals: 0,
