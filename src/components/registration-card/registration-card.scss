@@ -1,0 +1,45 @@
+.registration {
+  @include card;
+  min-height: 646px;
+
+  &__title {
+    @include card-title;
+  }
+
+  &__name-fields,
+  &__data {
+    margin-bottom: 10px;
+    .input:first-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__radios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 220px;
+    margin-bottom: 20px;
+  }
+
+  &__birthdate {
+    margin-bottom: 20px;
+  }
+
+  &__toggle {
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    margin-bottom: 30px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      padding-top: 12px;
+    }
+  }
+}
