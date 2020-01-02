@@ -1,22 +1,16 @@
 //- options.number - номер комнаты
     options.isLuxe(boolean) - определяет является ли номер люксовым. По умолчанию false
+    options.price - цена номера в сутки
 
 include ../dropdown-date/dropdown-date
 include ../button/button
+include ../room-header/room-header
 
 mixin booking-card(options)
-  - const price = options.price + "₽"
-
   .booking-card
     form(class="booking-card__form" action="blank.link" method="post")
-      .booking-card__room № 
-        span.booking-card__number= options.number
-        if (options.isLuxe)
-          span.booking-card__luxe  люкс
-      
-      .booking-card__price= price
-        span.booking-card__price-text  в сутки 
-
+      .booking-card__header
+        +room-header({number: options.number, isLuxe: options.isLuxe, price: options.price})
       .booking-card__dropdowns
         +dropdown-date({label: "прибытие", name: "arriving"})
         +dropdown-date({label: "выезд", name: "leaving"})
