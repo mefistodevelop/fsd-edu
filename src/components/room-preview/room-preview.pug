@@ -1,0 +1,23 @@
+//- options.rate - количество звезд рейтинга
+    options.feedbacks - количество отзывов
+    options.number - номер комнаты
+    options.isLuxe(boolean) - определяет является ли номер люксовым. По умолчанию false
+    options.price - цена номера в сутки
+
+include ../rate-button/rate-button
+include ../room-header/room-header
+
+mixin room-preview(options)
+  .room-preview
+    .room-preview__carousel
+    .room-preview__container
+      .room-preview__header
+        +room-header({number: options.number, isLuxe: options.isLuxe, price: options.price})
+
+      .room-preview__hr
+
+      .room-preview__rate
+        +rate-button(options.rate)
+        p.room-preview__feedbacks
+          span.room-preview__feedbacks-number= options.feedbacks
+          |  Отзывов
