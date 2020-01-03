@@ -1,6 +1,10 @@
+@import "../../scss/utils/vars.scss";
+@import "../../scss/utils/mixins.scss";
+
 .booking-card {
   @include card;
   min-height: 511px;
+  background-color: #fff;
 
   &__form {
     display: flex;
@@ -10,6 +14,7 @@
 
   &__header {
     width: 100%;
+    margin-bottom: 20px;
   }
   
   &__dropdowns {
