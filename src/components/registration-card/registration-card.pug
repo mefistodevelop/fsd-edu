@@ -29,6 +29,6 @@ mixin registration-card
     
     .registration__footer
       span.registration__footer-text Уже есть аккаунт на Toxin
-      a(class="registration__sign-in button button_bordered" href="blank.link") войти
+      +button({type: "button", style: "bordered", text: "войти"}) 
 
     

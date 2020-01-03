@@ -1,6 +1,10 @@
+@import "../../scss/utils/vars.scss";
+@import "../../scss/utils/mixins.scss";
+
 .registration {
   @include card;
   min-height: 646px;
+  background-color: #fff;
 
   &__title {
     @include card-title;
