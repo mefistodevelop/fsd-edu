@@ -4,6 +4,9 @@
     options.type - тип кнопки (submit/button/reset)
 
 mixin button(options)
-  - var className= ""
-  - className = options.style ? "button button_" + options.style : ""
-  button(class= className type= options.type)= options.text
+  - const className = options.style ? "button button_" + options.style : ""
+  if (options.style === "bordered")
+    .button__border
+      button(class= className type= options.type)= options.text
+  else
+    button(class= className type= options.type)= options.text

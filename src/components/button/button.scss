@@ -1,4 +1,7 @@
+@import '../../scss/utils/vars';
+
 .button {
+  display: block;
   margin: 0;
   padding: 0;
 
@@ -9,10 +12,12 @@
 
   font-weight: 700;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 44px;
   text-transform: uppercase;
   background: $gradient-main;
   color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
   &:hover,
   &:focus {
     cursor: pointer;
@@ -26,32 +31,46 @@
     }
   }
 
+  &__border {
+    position: relative;
+    width: 99px;
+    height: 44px;
+    border-radius: 22px;
+    background: $gradient-main;
+    z-index: 0;
+    &:hover {
+      background: rgba(188,156,255,.5);
+    }
+  }
 
   &_bordered {
+    position: absolute;
+    top: 0;
     margin: 2px;
-    position: relative;
     width: 95px;
     height: 40px;
     background: #FFFFFF;
     color: $main;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: -2px;
-      border-radius: 22px;
-      background: $gradient-main;
-      z-index: -1;
-    }
-    &:hover,
-    &:focus {
-      &::before {
-        opacity: 0.5;
-      }
-    }
+    line-height: 40px;
+    z-index: 3;
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   margin: -2px;
+    //   border-radius: 22px;
+    //   background: $gradient-main;
+    //   z-index: -1;
+    // }
+    // &:hover,
+    // &:focus {
+    //   &::before {
+    //     opacity: 0.5;
+    //   }
+    // }
   }
 
   &_ghost {
@@ -80,6 +99,7 @@
       content: "\e909";
       right: 13px;
       font-size: 20px;
+      font-weight: 400;
     }
   }
 }
