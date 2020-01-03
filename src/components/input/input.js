@@ -1,3 +1,5 @@
+import './input.scss';
+
 import $ from 'jquery';
 import "jquery-mask-plugin";
 

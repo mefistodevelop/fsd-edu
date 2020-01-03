@@ -15,7 +15,7 @@ mixin input(options)
       - if (options.isButton === true)
           form.input__form(action="blank-link" method="post")
             label(class= "input__label input__label_button")= options.label  
-              input(class= "input__field",
+              input(class= options.label ? "input__field input__field_labeled" : "input__field",
                     type = options.type, 
                     name = options.name, 
                     placeholder = options.placeholder,
@@ -24,7 +24,7 @@ mixin input(options)
               button(class = "input__button", type="submit") &#xe909
       - else
         label.input__label= options.label  
-          input(class="input__field",
+          input(class= options.label ? "input__field input__field_labeled" : "input__field",
                 type = options.type,
                 name = options.name, 
                 placeholder = options.placeholder,
