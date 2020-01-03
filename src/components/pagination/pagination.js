@@ -1,3 +1,5 @@
+import './pagination.scss';
+
 document.addEventListener('DOMContentLoaded', function(){
   let itemsList = document.querySelectorAll('.pagination__list .pagination__item');
 

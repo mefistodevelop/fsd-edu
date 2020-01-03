@@ -1,6 +1,10 @@
+@import "../../scss/utils/vars.scss";
+@import "../../scss/utils/mixins.scss";
+
 .rooms {
   @include card;
   min-height: 374px;
+  background-color: #fff;
 
   &__title {
     @include card-title;

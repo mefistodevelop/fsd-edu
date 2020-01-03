@@ -1,3 +1,5 @@
+import './range-slider.scss';
+
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 

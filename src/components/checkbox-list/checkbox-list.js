@@ -1,3 +1,5 @@
+import './checkbox-list.scss';
+
 import $ from 'jquery';
 
 const $listHeader = $('.js-checkbox-list__header');

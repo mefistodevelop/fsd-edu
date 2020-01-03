@@ -1,6 +1,10 @@
+@import "../../scss/utils/vars.scss";
+@import "../../scss/utils/mixins.scss";
+
 .sign-in {
   @include card;
   min-height: 358px;
+  background-color: #fff;
 
   &__title {
     @include card-title;
