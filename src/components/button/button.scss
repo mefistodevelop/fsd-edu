@@ -37,9 +37,9 @@
     height: 44px;
     border-radius: 22px;
     background: $gradient-main;
-    z-index: 0;
-    &:hover {
-      background: rgba(188,156,255,.5);
+    &:hover,
+    &:focus {
+      background: linear-gradient(180deg, rgba(188,156,255, .5), rgba(139,164,249, .5));
     }
   }
 
@@ -52,25 +52,6 @@
     background: #FFFFFF;
     color: $main;
     line-height: 40px;
-    z-index: 3;
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   margin: -2px;
-    //   border-radius: 22px;
-    //   background: $gradient-main;
-    //   z-index: -1;
-    // }
-    // &:hover,
-    // &:focus {
-    //   &::before {
-    //     opacity: 0.5;
-    //   }
-    // }
   }
 
   &_ghost {
