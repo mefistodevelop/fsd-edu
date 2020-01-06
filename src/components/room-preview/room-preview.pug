@@ -3,13 +3,29 @@
     options.number - номер комнаты
     options.isLuxe(boolean) - определяет является ли номер люксовым. По умолчанию false
     options.price - цена номера в сутки
+    options.slides[{}...] - массив объектов, принимающие src, alt для изображений слайдов.
+                            Каждый объект- отдельный слайд
 
 include ../rate-button/rate-button
 include ../room-header/room-header
 
 mixin room-preview(options)
   .room-preview
-    .room-preview__carousel
+    .room-preview__carousel-wrapper.js-room-preview__carousel-wrapper
+      .room-preview__carousel-arrow.js-room-preview__carousel-arrow.room-preview__carousel-arrow_left
+      .room-preview__carousel-arrow.js-room-preview__carousel-arrow.room-preview__carousel-arrow_right
+      .room-preview__carousel
+        each slide in options.slides
+          div
+            img(
+              class="room-preview__carousel-slide",
+              src= slide.src || 'blank.link',
+              width="270",
+              height="151",
+              alt= slide.alt || 'фото комнаты'
+            )
+        
+
     .room-preview__container
       .room-preview__header
         +room-header({number: options.number, isLuxe: options.isLuxe, price: options.price})
