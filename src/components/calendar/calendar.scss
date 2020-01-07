@@ -1,0 +1,160 @@
+@import 'air-datepicker/dist/css/datepicker.min';
+@import '../../scss/utils/vars.scss';
+@import '../../scss/utils/mixins.scss';
+
+.calendar {
+  max-width: 320px;
+  &__field {
+    @include hidden;
+  }
+
+  .datepicker {
+    position: relative;
+    width: 100%;
+    min-height: 314px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+    font-family: Montserrat;
+    font-size: 12px;
+    line-height: 15px;
+    color: $shade-50;
+
+    &--nav {
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 0;
+      margin-bottom: 30px;
+      border-bottom: none;
+      &-title {
+        font-family: $quicksand;
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 24px;
+        color: $shade-100;
+        &:hover {
+          background: #ffffff;
+        }
+        
+        > i {
+          color: inherit;
+        }
+      }
+
+      &-action  {
+        width: 19px;
+        &:hover {
+          background: linear-gradient(180deg, rgba(188,156,255, .25), rgba(139,164,249, .25));
+        }
+      }
+    }
+
+    &--cell {
+      &.-selected-.-focus- {
+        background: $gradient-main;
+      }
+      &.-current-.-focus- {
+        background: $gradient-secondary;
+      }
+      &.-in-range-.-focus- {
+        background: linear-gradient(180deg, rgba(188,156,255, .25), rgba(139,164,249, .25));
+        border-radius: 0;
+      }
+      &-day {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &--day-name {
+      width: 40px;
+      flex: none;
+      font-family: Montserrat;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: $main;
+    }
+
+    &--content {
+      padding-left: 21px;
+    }
+
+    &__arrow {
+      font-family: icomoon;
+      font-size: 24px;
+      color: $main;
+      &_back {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .-focus- {
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(188,156,255, .25), rgba(139,164,249, .25));
+  }
+
+  .-current- {
+    background: $gradient-secondary;
+    font-weight: 700;
+    color: #ffffff;
+    border-radius: 22px;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .-selected- {
+    background: $gradient-main;
+    border-radius: 22px;
+    font-weight: 700;
+  }
+
+  .-other-month- {
+    color: $shade-25;
+  }
+
+  .-in-range- {
+    position: relative;
+    background: linear-gradient(180deg, rgba(188,156,255, .25), rgba(139,164,249, .25));
+  }
+
+  .-range-from- {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 16px;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(188,156,255, .25), rgba(139,164,249, .25));
+      z-index: -1;
+    }
+  }
+
+  .-range-to-{
+    &.-focus- {
+      border: none;
+      background: $gradient-main;
+    }
+  }
+
+  .-range-to- {
+    &.-focus- {
+      border: none;
+      background: $gradient-main;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(188,156,255, .25), rgba(139,164,249, .25));
+      z-index: -1;
+    }
+  }
+}
