@@ -26,12 +26,13 @@ block content
   section.form-elements
     .form-elements__header
       +uikit-header
+
     .form-elements__wrapper
       .form-elements__top
         .form-elements__col-1
           .form-elements__fields
             .form-elements__field
-              +input({type: "email", name: "email", placeholder: "Email", label: "text field", required: "true"})
+              +input({type: "email", name: "email", placeholder: "Email", label: "text field", required: "required"})
             .form-elements__field
               +input({type: "text", name: "text", placeholder: "This is pretty awesome", label:"text field"})
             .form-elements__field
@@ -182,4 +183,51 @@ block content
           .form-elements__comment 
             +comment({src: "assets/img/avatar-murad.jpg", time: "5 дней назад", name: 'Мурад Сарафанов', like: {count: "12", checked: "checked"}, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
 
+  section.cards
+    .cards__header
+      +uikit-header
+    
+    .cards__wrapper
+      .cards__col.cards__col-1
+        .cards__item
+          +rooms-card
+        .cards__item
+          +registration-card
 
+      .cards__col.cards__col-2
+        .cards__item
+          +booking-card({number: "888", isLuxe: true, price: "9 990"})
+        .cards__item
+          +sign-in
+    
+      .cards__col.cards__col-3
+        .cards__item
+          +calendar
+
+        .cards__room-preview
+          +room-preview({
+            number: "888", 
+            isLuxe: true, 
+            price: "9 990", 
+            rate: 5, 
+            feedbacks: 145, 
+            slides: [
+              {src: "assets/img/top-slide.jpg", alt: "общий вид комнаты"},
+              {src: "assets/img/top-slide.jpg", alt: "общий вид комнаты"},
+              {src: "assets/img/top-slide.jpg", alt: "общий вид комнаты"},
+              {src: "assets/img/top-slide.jpg", alt: "общий вид комнаты"}
+            ]
+          })
+          +room-preview({
+            number: "840", 
+            price: "9 900", 
+            rate: 4, 
+            feedbacks: 65,
+            slides: [
+              {src: "assets/img/bottom-slide.jpg", alt: "Общий вид комнаты"},
+              {src: "assets/img/bottom-slide.jpg", alt: "Общий вид комнаты"},
+              {src: "assets/img/bottom-slide.jpg", alt: "Общий вид комнаты"},
+              {src: "assets/img/bottom-slide.jpg", alt: "Общий вид комнаты"},
+            ]
+          })
+        

@@ -1,5 +1,7 @@
-.colors-type {
+body {
   width: 1440px;
+}
+.colors-type {
   padding-bottom: 145px;
   &__wrapper {
     display: flex;
@@ -274,4 +276,43 @@
     padding-top: 14px;
     max-width: 711px;
   }
+}
+
+.cards {
+  background: #E5E5E5;
+
+  &__header {
+    margin-bottom: 72px;
+  }
+
+  &__wrapper {
+    display: flex;
+    padding-left: 140px;
+    padding-right: 140px;
+    padding-bottom: 140px;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__room-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 555px;
+  }
+
 }
