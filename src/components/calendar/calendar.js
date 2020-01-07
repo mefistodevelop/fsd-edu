@@ -17,4 +17,6 @@ $(document).ready(function(){
     }
   });
 
+  $('.datepicker--buttons').append('<button class="datepicker--button  datepicker--button_apply" type="button">Применить</button>');
+
 });

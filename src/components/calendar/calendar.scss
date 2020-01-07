@@ -89,6 +89,32 @@
         transform: rotate(180deg);
       }
     }
+
+    &--buttons {
+      justify-content: space-between;
+      padding: 20px;
+      min-height: 55px;
+      border-top: none;
+    }
+
+    &--button {
+      max-width: 84px;
+      height: 15px;
+      font-family: $montserrat;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $shade-50;
+      &:hover {
+        background: #ffffff;
+        color: $main;
+      }
+
+      &_apply {
+        border: none;
+        background: #ffffff;
+      }
+    }
+
   }
 
   .-focus- {
