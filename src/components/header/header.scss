@@ -1,0 +1,105 @@
+@import "../../scss/utils/mixins";
+@import "../../scss/utils/vars";
+
+
+.header {
+  position: relative;
+  z-index: 1;
+  padding-top: 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  width: 100%;
+  min-height: 70px;
+
+  &__navigation {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+  }
+
+  &__logo {
+    padding-top: 1px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    min-width: 438px;
+    list-style: none;
+    &_uikit {
+      min-width: 524px;
+    }
+  }
+
+  &__item {
+    margin-right: 20px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &_dropdown {
+      padding-right: 17px;
+
+      > .header__link {
+        position: relative;
+        &::after {
+          content: "\e901";
+          position: absolute;
+          top: 0;
+          right: -23px;
+          width: 24px;
+          height: 24px;
+          font-family: icomoon;
+          font-size: 24px;
+          color: $shade-50;
+        }
+      }
+    }
+
+  }
+
+  &__link {
+    @include nav-link;
+
+    &_active {
+      font-weight: 700;
+      color: $shade-75;
+    }
+  }
+
+  &__auth {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-width: 100px;
+    padding-left: 30px;
+
+    &_login {
+      margin-left: 30px;
+      align-self: center;
+      min-height: 30px;
+      border-left: 1px solid rgba(31, 32, 65, 0.1);
+    }
+  }
+
+  &__button {
+    height: 34px;
+    &_registration {
+      margin-left: 20px;
+    }
+  }
+
+  &__user {
+    @include nav-link;
+    margin-left: auto;
+  }
+}
+
+.container {
+  display: flex;
+  @include container;
+}
