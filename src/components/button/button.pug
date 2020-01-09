@@ -5,8 +5,4 @@
 
 mixin button(options)
   - const className = options.style ? "button button_" + options.style : ""
-  if (options.style === "bordered")
-    .button__border
-      button(class= className type= options.type)= options.text
-  else
-    button(class= className type= options.type)= options.text
+  button(class= className type= options.type)= options.text
