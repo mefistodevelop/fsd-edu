@@ -113,4 +113,8 @@
       color: $shade-100;
     }
   }
+
+  &__button {
+    @include big-button;
+  }
 }

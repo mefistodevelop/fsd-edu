@@ -8,8 +8,10 @@ mixin sign-in
       .sign-in__fields
         +input({type: "email", name: "email", placeholder: "Email", required: "required"})
         +input({type: "password", name: "password", placeholder: "Пароль", required: "required"})
-      +button({type: "submit", style: "big", text: "войти"})
+      .sign-in__button
+        +button({type: "submit", style: "big", text: "войти"})
     
     .sign-in__footer
       span.sign-in__footer-text Нет аккаунта на Toxin?
-      +button({type: "button", style: "bordered", text: "создать"})
+      .sign-in__footer-button
+        +button({type: "button", style: "bordered", text: "создать"})

@@ -3,6 +3,8 @@
 
 .sign-in {
   @include card;
+  position: relative;
+  z-index: 1;
   min-height: 358px;
   background-color: #fff;
 
@@ -28,5 +30,12 @@
     &-text {
       padding-top: 12px;
     }
+    &-button {
+      @include bordered-button;
+    }
+  }
+
+  &__button {
+    @include big-button;
   }
 }

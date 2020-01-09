@@ -21,4 +21,8 @@
       margin-bottom: 20px;
     }
   }
+
+  &__button {
+    @include big-button;
+  }
 }

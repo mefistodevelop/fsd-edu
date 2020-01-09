@@ -3,6 +3,8 @@
 
 .registration {
   @include card;
+  position: relative;
+  z-index: 1;
   min-height: 646px;
   background-color: #fff;
 
@@ -35,6 +37,7 @@
   }
 
   &__button {
+    @include big-button;
     margin-bottom: 30px;
   }
 
@@ -44,6 +47,10 @@
 
     &-text {
       padding-top: 12px;
+    }
+
+    &-button {
+      @include bordered-button;
     }
   }
 }
