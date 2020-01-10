@@ -3,6 +3,7 @@
 
 mixin like-button(options)
   .like-button
-    label.like-button__label
-      input.like-button__item(type="checkbox" name="like" checked=options.checked)
+    label(class= options.checked ? "like-button__label like-button__label_checked" : "like-button__label")
+      input(class="like-button__item js-like-button__item" type="checkbox" name="like" checked=options.checked)
+      span.like-button__icon
       span.like-button__counter= options.count

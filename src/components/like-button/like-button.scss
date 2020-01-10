@@ -1,16 +1,52 @@
 @import "../../scss/utils/vars.scss";
 
 .like-button {
+  padding: 1px;
+
   &__label {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+    padding-right: 4px;
     position: relative;
-    width: 38px;
+    min-width: 38px;
     height: 18px;
     color: $shade-25;
     cursor: pointer;
     background: #ffffff;
     border-radius: 10px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $shade-25;
+      border-radius: 10px;
+      z-index: -1;
+      margin: -1px;
+    }
+
+    &_checked {
+      &::after {
+        background: $gradient-main;
+      }
+    }
   }
+
+  &__icon {
+    margin-right: 5px;
+    padding-bottom: 4px;
+    &::before {
+      content: "\e903";
+      font-family: icomoon;
+      font-size: 10px;
+      line-height: 9px;
+      color: $shade-25;
+    }
+  }
+
 
   &__item {
     position: absolute;
@@ -24,49 +60,22 @@
   }
 
   &__counter {
-    position: absolute;
-    top: 2px;
-    left: 20px;
+    align-self: baseline;
+    padding-top: 2px;
     font-size: 10px;
     line-height: 11px;
     border: 1px solid transparent;
-    &::before {
-      //like icon
-      content: "\e903";
-      position: absolute;
-      top: 0;
-      left: -17px;
-      font-family: "icomoon";
-      color: $shade-25;
-      font-size: 10px;
-      line-height: 11px;
-    }
-    &::after {
-      //button border
-      content: "";
-      position: absolute;
-      top: -3px;
-      right: 0;
-      bottom: 0;
-      left: -21px;
-      background: $shade-25;
-      width: 40px;
-      height: 20px;
-      border-radius: 10px;
-      z-index: -1;
-      margin: -1px;
-    }
   }
 
   &__item:checked {
     ~ .like-button__counter {
       color: $main;
+    }
+
+    ~ .like-button__icon {
       &::before {
         content: "\e906";
         color: $main;
-      }
-      &::after {
-        background: $gradient-main;
       }
     }
   }
