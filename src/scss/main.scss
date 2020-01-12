@@ -1,3 +1,9 @@
+@import "utils/libs.scss";
+@import "utils/vars.scss";
+@import "utils/mixins.scss";
+@import "utils/fonts.scss";
+@import "uikit.scss";
+
 *,
 ::before,
 ::after {
@@ -5,11 +11,6 @@
 }
 
 body {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: $montserrat;
+  font-size: 14px;
 }
-
-@import "utils/libs.scss";
-@import "utils/vars.scss";
-@import "utils/mixins.scss";
-@import "utils/fonts.scss";
-@import "uikit.scss";

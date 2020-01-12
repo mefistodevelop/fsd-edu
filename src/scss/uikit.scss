@@ -4,22 +4,15 @@
 }
 
 .colors-type {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 11.65%;
+  padding-right: 10.9%;
   padding-bottom: 145px;
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 10.5%;
-    padding-right: 13%;
 
-    @media(max-width: 576px) {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-  }
-
-  &__header {
-    margin-bottom: 64px;
+  @media(max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
   }
 
   &__colors {
