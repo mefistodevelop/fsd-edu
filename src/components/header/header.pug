@@ -17,10 +17,11 @@ mixin header(options)
   - const {items, user}  = options;
   - const signIn = options.signin ? options.signin : "login";
   - const signUp = options.signup? options.signup : "register";
-  - const mod = options.isUikit ? " header__list_uikit" : ""
+  - const mod = options.isUikit ? ' header__list_uikit' : ''
+  - const loginMod = options.isLogin ? ' header__item_logged-in' : ''
 
   .header
-    .container
+    .header__container
       a.header__logo(href="blank.link")
         img(src="assets/img/toxin-logo.svg" width="106" height="40" alt="Toxin логотип")
 
@@ -30,13 +31,13 @@ mixin header(options)
             li(class= item.isDropdown ? "header__item header__item_dropdown" : "header__item")
               a(class="header__link"
                 href= item.href || "blank.link")= item.text
-
-        div(class= options.isLogin ? "header__auth header__auth_login" : "header__auth")
-          if (options.isLogin)
-            a.header__user(href= user.href)= user.name
-          else
-            .header__button.header__button_login
-              +button({type: "button", style: "bordered", text: signIn})
-            .header__button.header__button_registration
-              +button({type: "button", style: "default", text: signUp})
+          li(class = "header__item header__item_auth"+loginMod)
+            div(class= options.isLogin ? "header__auth header__auth_login" : "header__auth")
+              if (options.isLogin)
+                a.header__user(href= user.href)= user.name
+              else
+                .header__button.header__button_login
+                  +button({type: "button", style: "bordered", text: signIn})
+                .header__button.header__button_registration
+                  +button({type: "button", style: "default", text: signUp})
 

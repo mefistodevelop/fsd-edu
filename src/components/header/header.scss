@@ -1,5 +1,5 @@
-@import "../../scss/utils/mixins";
-@import "../../scss/utils/vars";
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/vars';
 
 
 .header {
@@ -11,14 +11,35 @@
   width: 100%;
   min-height: 70px;
 
+  &__container {
+    @include container;
+    @media (max-width: 1250px) {
+      padding-right: 17px;
+    }
+  }
+
   &__navigation {
     display: flex;
     flex-wrap: wrap;
     margin-left: auto;
+
+    // @media (max-width: 992px) {
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   flex-direction: column;
+    //   justify-content: space-between;
+    //   align-items: center;
+    //   background: #ffffff;
+    //   width: 50%;
+    //   // height: 100vh;
+    //   // z-index: 1;
+    // }
   }
 
   &__logo {
     padding-top: 1px;
+    margin-right: 30px;
   }
 
   &__list {
@@ -33,10 +54,24 @@
     &_uikit {
       min-width: 524px;
     }
+
+    @media (max-width: 992px) {
+      // position: absolute;
+      // top: 0;
+      // right: 0;
+      // flex-direction: column;
+      // justify-content: space-between;
+      // align-items: center;
+      // background: #ffffff;
+      // width: 50%;
+      // height: 100vh;
+      // z-index: 1;
+    }
   }
 
   &__item {
-    margin-right: 20px;
+    margin-right: 28px;
+    &:nth-last-child(2),
     &:last-of-type {
       margin-right: 0;
     }
@@ -47,7 +82,7 @@
       > .header__link {
         position: relative;
         &::after {
-          content: "\e901";
+          content: '\e901';
           position: absolute;
           top: 0;
           right: -23px;
@@ -58,6 +93,16 @@
           color: $shade-50;
         }
       }
+    }
+
+    &_logged-in {
+      border-left: 1px solid rgba(31, 32, 65, 0.1);
+      margin-left: 32px;
+
+    }
+
+    &_auth {
+      padding-left: 30px;
     }
 
   }
@@ -76,13 +121,14 @@
     flex-wrap: wrap;
     align-items: center;
     min-width: 100px;
-    padding-left: 30px;
+    // padding-left: 30px;
 
     &_login {
-      margin-left: 30px;
+      padding-right: 2px;
+      // margin-left: 32px;
       align-self: center;
       min-height: 30px;
-      border-left: 1px solid rgba(31, 32, 65, 0.1);
+      // border-left: 1px solid rgba(31, 32, 65, 0.1);
     }
   }
 
@@ -97,9 +143,4 @@
     @include nav-link;
     margin-left: auto;
   }
-}
-
-.container {
-  display: flex;
-  @include container;
 }

@@ -332,15 +332,20 @@
 }
 
 .headers {
+  // padding-top: 66px;
+  padding-bottom: 130px;
   background: #E5E5E5;
+
   &__header {
-    margin-bottom: 66px;
+    padding-top: 30px;
+    padding-left: 30px;
+    margin-bottom: 67px;
+    > img {
+      width: 48px;
+      height: 48px;
+    }
+  
   }
-
-  &__wrapper {
-    padding-bottom: 130px;
-  }
-
   &__item {
     margin-bottom: 40px;
   }
