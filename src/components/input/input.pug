@@ -12,7 +12,7 @@
 mixin input(options)
   .input
     - if (options.type === "text" || options.type === "email" || options.type === "password" || options.type === "date")
-      - if (options.isButton === true)
+      - if (options.isButton)
           form.input__form(action="blank-link" method="post")
             label(class= "input__label input__label_button")= options.label  
               input(class= options.label ? "input__field input__field_labeled" : "input__field",
