@@ -20,7 +20,7 @@ mixin header(options)
   - const mod = options.isUikit ? ' header__list_uikit' : ''
   - const loginMod = options.isLogin ? ' header__item_logged-in' : ''
 
-  .header
+  .header.js-header
     .header__container
       a.header__logo(href="blank.link")
         img(src="assets/img/toxin-logo.svg" width="106" height="40" alt="Toxin логотип")
@@ -36,8 +36,13 @@ mixin header(options)
               if (options.isLogin)
                 a.header__user(href= user.href)= user.name
               else
-                .header__button.header__button_login
+                .header__button.header__button_login.js-header__button_login
                   +button({type: "button", style: "bordered", text: signIn})
-                .header__button.header__button_registration
+                .header__button.header__button_registration.js-header__button_registration
                   +button({type: "button", style: "default", text: signUp})
+      
+        .header__burger.js-header__burger
+          .header__burger-line
+          .header__burger-line
+          .header__burger-line
 
