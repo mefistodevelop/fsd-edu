@@ -1,4 +1,6 @@
 @mixin label {
+  margin: 0;
+  padding: 0;
   font-weight: 700;
   font-size: 12px;
   line-height: 12px;
@@ -33,4 +35,40 @@
   width: 0;
   height: 0;
   opacity: 0;
+}
+
+@mixin container {
+  display: flex;
+  max-width: 1178px;
+  margin: 0 auto;
+  padding-left: 17px;
+
+  @media (max-width: 1250px) {
+    padding-right: 17px;
+  }
+}
+
+@mixin nav-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $shade-50;
+  text-decoration: none;
+  text-transform: capitalize;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    color: $shade-100;
+  }
+}
+
+@mixin big-button {
+  max-width: 320px;
+  height: 44px;
+}
+
+@mixin bordered-button {
+  width: 99px;
+  height: 44px;
 }
