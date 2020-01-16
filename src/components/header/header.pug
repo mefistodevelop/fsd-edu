@@ -20,10 +20,10 @@ mixin header(options)
   - const mod = options.isUikit ? ' header__list_uikit' : ''
   - const loginMod = options.isLogin ? ' header__item_logged-in' : ''
 
-  .header.js-header
+  header.header.js-header
     .header__container
       a.header__logo(href="blank.link")
-        img(src="assets/img/toxin-logo.svg" width="106" height="40" alt="Toxin логотип")
+        img(src="assets/img/toxin-logo.svg" width="106" alt="логотип Toxin")
 
       nav.header__navigation
         ul(class="header__list"+mod)

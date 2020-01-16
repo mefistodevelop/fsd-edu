@@ -13,9 +13,6 @@
 
   &__container {
     @include container;
-    @media (max-width: 1250px) {
-      padding-right: 17px;
-    }
   }
 
   &__navigation {
