@@ -1,0 +1,14 @@
+//- links - массив, принимающий ссылки на страницы пагинации
+
+mixin pagination(links)
+  .pagination
+    ul.pagination__list
+      each link, index in links
+        li.pagination__item
+          a(class="pagination__link" 
+            href= link)= index + 1
+      li.pagination__item.pagination__item_last
+        a(class="pagination__link pagination__link_last"
+          href="last-page.link") &#xe909
+    
+    p.pagination__footer 1 – 12 из 100+ вариантов аренды

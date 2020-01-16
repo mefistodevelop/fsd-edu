@@ -1,0 +1,120 @@
+@import "../../scss/utils/vars.scss";
+@import "../../scss/utils/mixins.scss";
+
+.booking-card {
+  @include card;
+  min-height: 511px;
+  background-color: #fff;
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__header {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  &__dropdowns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div:nth-child(n) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__taxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+
+    &-item {
+      margin: 0;
+      padding: 0;
+      width: 214px;
+      margin-right: 5px;
+    }
+
+    &-block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 8px;
+
+      font-size: 14px;
+      line-height: 24px;
+      color: $shade-75;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    &-description {
+      display: flex;
+    }
+
+    &-button {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border-width: 1px;
+      border-style: solid;
+      border-color: $shade-25;
+      background-color: #fff;
+
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 14px;
+      color: $shade-25;
+      &:focus,
+      &:hover {
+        cursor: pointer;
+        border-color: $main;
+        color: $main;
+      }
+    }
+  }
+
+  &__total {
+    display: grid;
+    grid-template-columns: auto minmax(10px, 3fr) minmax(68px, 1fr);
+    grid-column-gap: 5px;
+    margin-bottom: 20px;
+    &-text {
+      margin: 0;
+      padding: 0;
+      grid-area: 1/1/1/2;
+
+      font-family: $quicksand;
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 24px;
+      color: $shade-100;
+    }
+
+    &-filler {
+      height: 19px;
+      border-bottom: 1px dashed $shade-25;
+      grid-area: 1/2/1/3;
+    }
+
+    &-price {
+      grid-area: 1/3/1/4;
+      font-family: $quicksand;
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 24px;
+      color: $shade-100;
+    }
+  }
+
+  &__button {
+    @include big-button;
+  }
+}

@@ -1,0 +1,9 @@
+//- options.title - заголовок списка
+    options.items - принимает массив строк, каждая строка - отдельный пункт списка
+
+mixin list(options)
+  .list
+    h3.list__title= options.title
+    ul.list__items
+      each item in options.items
+        li.list__item= item

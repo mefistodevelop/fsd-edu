@@ -1,0 +1,142 @@
+@import "../../scss/utils/vars.scss";
+@import 'slick-carousel/slick/slick.scss';
+
+.room-preview {
+  width: 270px;
+  min-height: 257px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+
+  &__carousel {
+    position: relative;
+    width: 100%;
+
+    &-wrapper {
+      position: relative;
+    }
+
+    &-arrow {
+      display: none;
+      position: absolute;
+      width: 42px;
+      height: 151px;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      z-index: 1;
+
+      &_right {
+        right: 0;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+      }
+
+    }
+
+    .slick {
+      &-arrow {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+        cursor: pointer;
+        outline: none;
+        
+        &::before {
+          content: "\e90e";
+          display: none;
+          position: absolute;
+          top: -1px;
+          right: 0;
+          font-family: icomoon;
+          font-size: 24px;
+          color: #FFFFFF;
+        }
+
+        &:hover::before,
+        &:focus::before {
+          transform: scale(1.5);
+          transition: all .1s;
+        }
+
+        &_visible::before {
+          display: block;
+        }
+      }
+
+      &-next {
+        right: 0;
+        &::before {
+          content: "\e90d";
+          right: 0;
+        }
+      }
+
+      &-dots {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        display: flex;
+        list-style: none;
+        z-index: 2;
+
+        > li {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 8px;
+            height: 8px;
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+            background: transparent;
+          }
+          > button {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            cursor: pointer;
+          }
+        }
+        .slick-active{
+          &::before {
+            background: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+
+  &__container {
+    padding: 20px 17px 19px 20px;
+  }
+
+  &__hr {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    width: 230px;
+    height: 1px;
+    background-color: rgba(31, 32, 65, 0.1);
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__feedbacks {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.visible {
+  display: block;
+}

@@ -1,0 +1,89 @@
+@import '../../scss/utils/vars';
+
+.button {
+  display: block;
+  margin: 0;
+  padding: 0 20px;
+
+  min-width: 60px;
+  height: 100%;
+  border: none;
+  border-radius: 22px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  background: $gradient-main;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: none;
+  }
+
+  &_default {
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+
+  &_bordered {
+    position: relative;
+    margin: 2px;
+    padding: 0 18px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: #FFFFFF;
+    color: $main;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 22px;
+      background: $gradient-main;
+      z-index: -1;
+      margin: -2px;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      background: linear-gradient(180deg, rgba(188,156,255, .5), rgba(139,164,249, .5));
+    }
+  }
+
+  &_ghost {
+    padding: 0;
+    background: transparent;
+    color: $main;
+
+    &:hover,
+    &:focus {
+      color: $shade-50;
+    }
+  }
+
+  &_big {
+    position: relative;
+    width: 320px;
+    text-align: center;
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+    &::after {
+      position: absolute;
+      font-family: 'icomoon';
+      content: "\e909";
+      right: 13px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+}

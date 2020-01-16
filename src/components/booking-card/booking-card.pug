@@ -1,0 +1,44 @@
+//- options.number - номер комнаты
+    options.isLuxe(boolean) - определяет является ли номер люксовым. По умолчанию false
+    options.price - цена номера в сутки
+
+include ../dropdown-date/dropdown-date
+include ../button/button
+include ../room-header/room-header
+
+mixin booking-card(options)
+  .booking-card
+    form(class="booking-card__form" action="blank.link" method="post")
+      .booking-card__header
+        +room-header({number: options.number, isLuxe: options.isLuxe, price: options.price})
+      .booking-card__dropdowns
+        +dropdown-date({label: "прибытие", name: "arriving"})
+        +dropdown-date({label: "выезд", name: "leaving"})
+        +dropdown-guests({label: "гости", name: "guests"})
+
+      .booking-card__taxes
+        .booking-card__taxes-block
+          p.booking-card__taxes-item #{price} x 4 суток
+          span 39 960₽
+
+        .booking-card__taxes-block
+          .booking-card__taxes-description
+            p.booking-card__taxes-item Сбор за услуги: скидка 2 179₽
+            button.booking-card__taxes-button(type="button") i
+          span 0₽
+
+        .booking-card__taxes-block
+          .booking-card__taxes-description
+            p.booking-card__taxes-item Сбор за дополнительные услуги
+            button.booking-card__taxes-button(type="button") i
+          span 300₽
+      
+      .booking-card__total
+        p.booking-card__total-text Итого
+        .booking-card__total-filler
+        span.booking-card__total-price 38 081₽
+      
+      .booking-card__button
+        +button({type: "submit", style: "big", text: "забронировать"})
+      
+        

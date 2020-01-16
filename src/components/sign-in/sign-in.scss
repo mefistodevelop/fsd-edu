@@ -1,0 +1,41 @@
+@import "../../scss/utils/vars.scss";
+@import "../../scss/utils/mixins.scss";
+
+.sign-in {
+  @include card;
+  position: relative;
+  z-index: 1;
+  min-height: 358px;
+  background-color: #fff;
+
+  &__title {
+    @include card-title;
+  }
+
+  &__form {
+    margin-bottom: 30px;
+  }
+
+  &__fields {
+    margin-bottom: 20px;
+    .input:first-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &-text {
+      padding-top: 12px;
+    }
+    &-button {
+      @include bordered-button;
+    }
+  }
+
+  &__button {
+    @include big-button;
+  }
+}

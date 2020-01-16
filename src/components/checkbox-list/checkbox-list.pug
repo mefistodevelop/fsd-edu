@@ -1,0 +1,14 @@
+//- options.title - заголовок списка
+    options.items[{text, checked}] - массив объектов, каждый объект - элемент списка
+
+include ../input/input
+
+mixin checkbox-list(options)
+  .checkbox-list
+    .checkbox-list__header.js-checkbox-list__header
+      h3.checkbox-list__title= options.title
+    ul.checkbox-list__items.js-checkbox-list__items.checkbox-list__items_hidden
+      each item in options.items
+        li.checkbox-list__item
+          +input({type: "checkbox", text: item.text, checked: item.checked})
+

@@ -1,0 +1,83 @@
+
+
+include ../input/input
+
+mixin footer(options)
+  - const {description, navigation, about, support, subscribe, socials} = options;
+
+  mixin li(items)
+    each item in items
+      li(class='footer__item') 
+        a(class='footer__link' href= item.href ? item.href : 'blank-link')= item.text
+
+
+
+  footer.footer
+    .footer__container
+      .footer__description
+        a.footer__logo(href="index.html")
+          img(src="assets/img/toxin-logo.svg" width="106" alt="логотип Toxin")
+        
+        p.footer__description-text= description
+
+      .footer__links 
+        .footer__navigation
+          h3.footer__title= navigation.title || 'navigation'
+          ul.footer__list
+            +li(navigation.items)
+
+        .footer__about
+          h3.footer__title= about.title || 'about us'
+          ul.footer__list
+            +li(about.items)
+
+        .footer__support
+          h3.footer__title= support.title || 'support'
+          ul.footer__list
+            +li(support.items)
+
+
+      .footer__subscribe
+        h3.footer__title= subscribe.title || 'subscribe'
+        p.footer__subscribe-text= subscribe.text
+        .footer__subscribe-field
+          +input({type: 'email', isButton: true, name: 'email', placeholder: 'Your email address'})
+
+  .footer__page-footer
+    .footer__container.footer__container_bottom
+      p.footer__copyright
+        | Copyright © 2018 Toxin UI Kit. All rights reserved.
+      
+      .footer__socials
+        a.footer__social(href=socials.twitter || 'blank.link')
+          span.visually-hidden Twitter
+          span.icon-twitter
+
+        a.footer__social(href=socials.facebook || 'blank.link')
+          span.visually-hidden Facebook
+          span.icon-facebook-square
+          
+        a.footer__social(href=socials.instagram || 'blank.link')
+          span.visually-hidden Instagram
+          span.icon-instagram
+  
+  //- else 
+  //-   footer.footer.footer_simple
+  //-     .footer__description
+  //-       a.footer__logo(href="index.html")
+  //-         img(src="assets/img/toxin-logo.svg" width="106" alt="логотип Toxin")
+        
+  //-       p.footer__description-text= description
+
+  //-     .footer__socials
+  //-         a.footer__social(href=socials.twitter || 'blank.link')
+  //-           span.visually-hidden Twitter
+  //-           span.icon-twitter
+
+  //-         a.footer__social(href=socials.facebook || 'blank.link')
+  //-           span.visually-hidden Facebook
+  //-           span.icon-facebook-square
+            
+  //-         a.footer__social(href=socials.instagram || 'blank.link')
+  //-           span.visually-hidden Instagram
+  //-           span.icon-instagram

@@ -1,0 +1,8 @@
+//- 
+    options.style - определяет вид кнопки (default/bordered/ghost/big)
+    options.text - текст кнопки
+    options.type - тип кнопки (submit/button/reset)
+
+mixin button(options)
+  - const className = options.style ? "button button_" + options.style : ""
+  button(class= className type= options.type)= options.text

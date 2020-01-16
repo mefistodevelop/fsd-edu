@@ -1,0 +1,28 @@
+@import "../../scss/utils/vars.scss";
+@import "../../scss/utils/mixins.scss";
+
+.rooms {
+  @include card;
+  min-height: 374px;
+  background-color: #fff;
+
+  &__title {
+    @include card-title;
+  }
+
+  &__dropdowns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 31px;
+    
+    :nth-child(n):not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    @include big-button;
+  }
+}

@@ -1,0 +1,41 @@
+@import "../../scss/utils/vars.scss";
+
+.room-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__room {
+    font-family: $quicksand;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $shade-100;
+  }
+
+  &__number {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__luxe {
+    font-family: Montserrat;
+    color: $main;
+  }
+
+  &__price {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: $shade-50;
+
+    &-text {
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: 400;
+    }
+  }
+
+}

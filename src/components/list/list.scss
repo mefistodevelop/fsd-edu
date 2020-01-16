@@ -1,0 +1,45 @@
+@import "../../scss/utils/vars.scss";
+
+.list {
+  width: 260px;
+  &__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $shade-100;
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $shade-75;    
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-color: $shade-25;
+      border-radius: 50%;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
