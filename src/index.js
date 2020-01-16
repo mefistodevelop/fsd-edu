@@ -23,3 +23,5 @@ import './components/booking-card/booking-card';
 import './components/room-header/room-header';
 import './components/room-preview/room-preview';
 import './components/calendar/calendar';
+import './components/header/header';
+import './components/footer/footer';
