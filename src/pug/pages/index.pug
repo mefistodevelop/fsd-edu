@@ -283,36 +283,42 @@ block content
     .headers__item
       +footer({
         description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
-        navigation: {
-          title: 'navigation',
-          items: [
-            {href: 'blank.link', text: 'About Us'},
-            {href: 'blank.link', text: 'News'},
-            {href: 'blank.link', text: 'Support'},
-            {href: 'blank.link', text: 'Products'},
-          ]
-        },
-        about: {
-          title: 'about us',
-          items: [
-            {href: 'blank.link', text: 'Who we are'},
-            {href: 'blank.link', text: 'Our team'},
-            {href: 'blank.link', text: 'Careers'},
-            {href: 'blank.link', text: 'Investors'},
-          ]
-        },
-        support: {
-          title: 'support',
-          items: [
-            {href: 'blank.link', text: 'Documentation'},
-            {href: 'blank.link', text: 'Community'},
-            {href: 'blank.link', text: 'Get in Touch'},
-          ]
-        },
+        blocks: [
+          {
+            title: 'navigation',
+            items: [
+              {href: 'blank.link', text: 'About Us'},
+              {href: 'blank.link', text: 'News'},
+              {href: 'blank.link', text: 'Support'},
+              {href: 'blank.link', text: 'Products'},
+            ]
+          },
+          {
+            title: 'about us',
+            items: [
+              {href: 'blank.link', text: 'Who we are'},
+              {href: 'blank.link', text: 'Our team'},
+              {href: 'blank.link', text: 'Careers'},
+              {href: 'blank.link', text: 'Investors'},
+            ]
+          },
+          {
+            title: 'support',
+            items: [
+              {href: 'blank.link', text: 'Documentation'},
+              {href: 'blank.link', text: 'Community'},
+              {href: 'blank.link', text: 'Get in Touch'},
+            ]
+          }
+        ],
+
         subscribe: {
           title: 'Subscribe to our newsletter',
           text: 'Receive our latest news and promotions in your inbox!'
         },
+
+        copyright: 'Copyright © 2018 Toxin UI Kit. All rights reserved.',
+
         socials: {
           twitter: 'blank.link',
           facebook: 'blank.link',
@@ -320,3 +326,13 @@ block content
         }
       })
 
+    .headers__item
+      +footer({
+        isSimple: true,
+        description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+        socials: {
+          twitter: 'blank.link',
+          facebook: 'blank.link',
+          instagram: 'blank.link'
+        }
+      })
