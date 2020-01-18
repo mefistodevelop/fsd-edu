@@ -38,55 +38,106 @@
   }
 }
 
-.form-elements{
-  width: 1440px;
-
-  &__header {
-    margin-bottom: 62px;
-  }
-  &__wrapper {
-    padding-left: 141px;
-    padding-right: 141px;
+.form-elements {
+  &__inner {
+    padding-right: 5%;
     padding-bottom: 147px;
+    padding-left: 10%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+
+    @media (max-width: 576px) {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
   }
 
-  &__top {
+  &__row {
     display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 58px;
-  }
 
-  &__col-1 {
-    max-width: 320px;
-    margin-right: 126px;
+    &_top {
+      grid-row: 1;
+      margin-bottom: 100px;
+    
+      @media (max-width: 1200px) {
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 779px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &_middle {
+      grid-row: 2;
+      display: grid;
+      grid-template-rows: auto auto;
+      margin-bottom: 40px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &_bottom {
+      grid-row: 3;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
   }
 
   &__fields {
-    margin-bottom: 40px;
+    max-width: 320px;
+    margin-right: 10.4%;
+
+    @media (max-width: 1200px) {
+      margin-bottom: 7em;
+    }
   }
 
   &__field {
     margin-bottom: 20px;
     &:last-of-type {
       margin-bottom: 0;
+      max-width: 267px;
     }
     &:nth-last-of-type(2) {
       margin-bottom: 41px;
     }
-
     &_dropdowns {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin-top: 42px;
-      margin-bottom: 41px;
+      margin-top: 13.5%;
+      margin-bottom: 13%;
+
+      @media (max-width: 1320px) {
+        flex-direction: column;
+
+        > :first-child {
+          margin-bottom: 1em;
+        }
+      }
     }
   }
 
 
-  &__col-2 {
-    max-width: 260px;
-    margin-right: 132px;
+
+  &__toggle-elements {
+    width: 262px;
+    margin-right: 10.5%;
+
+    @media (max-width: 1100px) {
+      margin-right: 0;
+    }
+
+    @media (max-width: 779px) {
+      margin-bottom: 7em;
+    }
   }
 
   &__checkboxes {
@@ -111,7 +162,7 @@
   &__radio-buttons {
     margin: 0;
     padding: 0;
-    margin-bottom: 41px;
+    margin-bottom: 16%;
     max-width: 220px;
     border: none;
     &-legend {
@@ -124,6 +175,10 @@
       flex-wrap: wrap;
       justify-content: space-between;
     }
+  }
+
+  &__radio-button {
+    width: 102px;
   }
 
   &__toggles {
@@ -161,6 +216,7 @@
   }
 
   &__rates {
+    
     &-label {
       @include label;
       margin: 0;
@@ -173,17 +229,26 @@
       flex-wrap: wrap;
       justify-content: space-between;
       max-width: 260px;
+
+      @media (max-width: 1326px) {
+        flex-direction: column;
+
+        > :first-child {
+          margin-bottom: .5em;
+        }
+      }
     }
   }
 
-  &__col-3 {
+
+  &__buttons-block {
     max-width: 320px;
   }
 
   &__range-slider {
     padding-top: 2px;
     padding-left: 1px;
-    margin-bottom: 42px;
+    margin-bottom: 3em;
   }
 
   &__buttons {
@@ -202,13 +267,26 @@
   &__button {
     height: 44px;
     width: 101px;
-    margin-bottom: 30px;
+    margin-bottom: 2.2em;
+
     &:first-of-type {
       padding-left: 1px;
       width: 102px;
     }
+    &:nth-of-type(2) {
+      margin-bottom: 1.3em;
+      padding-left: 1px;
+    }
+    &:nth-of-type(3) {
+      padding-left: 4px;
+      margin-bottom: 1em;
+      width: 65px;
+    }
     &:last-of-type {
       margin-bottom: 0;
+      width: auto;
+      max-width: 320px;
+      padding-left: 3px;
     }
   }
 
@@ -221,29 +299,55 @@
     }
   }
 
-  &__middle {
+
+
+  &__row-dropdowns {
+    grid-row: 1;
     display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 256px;
+    margin-bottom: 10em;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      max-width: 320px;
+      flex-direction: column;
+      margin: 0 auto;
+      margin-bottom: 3em;
+    }
   }
 
   &__dropdown-rooms {
-    margin-right: 180px;
+    margin-right: 12.8em;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 2em;
+    }
   }
 
   &__dropdown-guests {
-    width: 320px;
+    max-width: 320px;
+    width: 100%;
   }
 
   &__lists {
+    grid-row: 2;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 29px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__checkbox-list {
     max-width: 266px;
-    margin-right: 180px;
+    margin-right: 14.8%;
+
+    @media (max-width: 850px) {
+      margin-bottom: 3em;
+    }
   }
 
   &__expandable-checkbox {
@@ -253,7 +357,13 @@
   }
 
   &__rich-checkboxes {
-    margin-right: 138px;
+    margin-right: 11.5%;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 2em;      
+    }
+
     &-label {
       @include label;
       margin: 0;
@@ -270,14 +380,15 @@
     }
   }
 
-  &__footer {
-    display: flex;
-    flex-wrap: wrap;
-  }
+
 
   &__features {
-    margin-right: 167px;
+    margin-right: 12em;
     max-width: 291px;
+
+    @media (max-width:768px) {
+      margin-bottom: 3em;
+    }
   }
 
   &__feature {
@@ -288,9 +399,12 @@
 
   &__comment {
     padding-top: 14px;
-    max-width: 711px;
+    max-width: 724px;
   }
 }
+
+
+
 
 .cards {
   background: #E5E5E5;

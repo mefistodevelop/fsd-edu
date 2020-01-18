@@ -23,82 +23,113 @@ block content
           +uikit-types("H3", "This is a label or CTA text", "small-title")
           +uikit-types("Body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.", "main-text")
 
-    //- section.form-elements
+  section.form-elements
+    .container
       .form-elements__header
         +uikit-header
+      
+      .form-elements__inner
+        .form-elements__row.form-elements__row_top
+          .form-elements__fields
+            .form-elements__field
+              +input({type: "email", name: "email", placeholder: "Email", label: "text field", required: "required"})
+            
+            .form-elements__field
+              +input({type: "text", name: "text", placeholder: "This is pretty awesome", label:"text field"})
+            
+            .form-elements__field
+              +dropdown-guests({label: "dropdown"})
+            
+            .form-elements__field         
+              +input({type: "text", name: "date", placeholder: "ДД.ММ.ГГГГ", label: "masked text field"})
+            
+            .form-elements__field.form-elements__field_dropdowns
+              +dropdown-date({label: "date Dropdown", name: "dropdown-date1", placeholder: "ДД.ММ.ГГГГ"})
+              +dropdown-date({label: "date Dropdown", name: "dropdown-date2", placeholder: "ДД.ММ.ГГГГ"})
+            
+            .form-elements__field
+              +dropdown-date({type: "filter", label: "filter date dropdown", name: "dropdown-date", placeholder: "19 авг - 23 авг"})
+            
+            .form-elements__field
+              +input({type: "email", name: "email", placeholder: "Email", label: "subscription text field", isButton: true})
 
-      .form-elements__wrapper
-        .form-elements__top
-          .form-elements__col-1
-            .form-elements__fields
-              .form-elements__field
-                +input({type: "email", name: "email", placeholder: "Email", label: "text field", required: "required"})
-              .form-elements__field
-                +input({type: "text", name: "text", placeholder: "This is pretty awesome", label:"text field"})
-              .form-elements__field
-                +dropdown-guests({label: "dropdown"})
-              .form-elements__field         
-                +input({type: "text", name: "date", placeholder: "ДД.ММ.ГГГГ", label: "masked text field"})
-              .form-elements__field.form-elements__field_dropdowns
-                +dropdown-date({label: "date Dropdown", name: "dropdown-date1", placeholder: "ДД.ММ.ГГГГ"})
-                +dropdown-date({label: "date Dropdown", name: "dropdown-date2", placeholder: "ДД.ММ.ГГГГ"})
-              .form-elements__field
-                +dropdown-date({type: "filter", label: "filter date dropdown", name: "dropdown-date", placeholder: "19 авг - 23 авг"})
-              .form-elements__field
-                +input({type: "email", name: "email", placeholder: "Email", label: "subscription text field", isButton: true})
 
-          .form-elements__col-2
-            fieldset.form-elements__checkboxes
-              legend.form-elements__checkboxes-legend Checkbox Buttons
+          .form-elements__toggle-elements
+            .form-elements__checkboxes
+              h3.form-elements__checkboxes-legend Checkbox Buttons
+
               .form-elements__checkbox
                 +input({type: "checkbox", text: "Можно курить", name: "smoke"})
+              
               .form-elements__checkbox
                 +input({type: "checkbox", text: "Можно с питомцами", name: "pets", checked: "checked"})
+              
               .form-elements__checkbox
                 +input({type: "checkbox", text: "Можно пригласить гостей (до 10 человек)", name: "guests", checked: "checked"})
 
             
-            fieldset.form-elements__radio-buttons
-              legend.form-elements__radio-buttons-legend Radio Buttons
-              .form-elements__radio-buttons-wrapper
-                +input({type: "radio", text: "Мужчина", name: "sex-male", checked: "checked"})
-                +input({type: "radio", text: "Женщина", name: "sex-female"})
+            .form-elements__radio-buttons
+              h3.form-elements__radio-buttons-legend Radio Buttons
 
-            fieldset.form-elements__toggles
-              legend.form-elements__toggles-legend toggle
+              .form-elements__radio-buttons-wrapper
+                .form-elements__radio-button
+                  +input({type: "radio", text: "Мужчина", name: "sex-male", checked: "checked"})
+                
+                .form-elements__radio-button
+                  +input({type: "radio", text: "Женщина", name: "sex-female"})
+
+
+            .form-elements__toggles
+              h3.form-elements__toggles-legend toggle
+
               .form-elements__toggle
                 +toggle({text: "Получать спецпредложения", checked: "checked"})
+              
               .form-elements__toggle
                 +toggle({text: "Получать спецпредложения"})
             
+
             .form-elements__likes
-              p.form-elements__likes-label like button
+              h3.form-elements__likes-label like button
+
               .form-elements__likes-wrapper
                 +like-button({count: 2})
                 +like-button({count: 12, checked: "checked"})
 
+
             .form-elements__rates
-              p.form-elements__rates-label rate button
+              h3.form-elements__rates-label rate button
+
               .form-elements__rates-wrapper
                 +rate-button(4)
                 +rate-button(5)
 
-          .form-elements__col-3
+
+          .form-elements__buttons-block
+          
             .form-elements__range-slider
               +range-slider({title: "range slider"})
+            
+
             .form-elements__buttons
               p.form-elements__buttons-label buttons
+
               .form-elements__button
                 +button({style: "default", text: "click me"})
+              
               .form-elements__button
                 +button({style: "bordered", text: "click me", type: "reset"})
+              
               .form-elements__button
                 +button({style: "ghost", text: "click me"})
+              
               .form-elements__button
                 +button({style: "big", text: "перейти к оплате", type: "submit"})
 
+
             .form-elements__pagination
               p.form-elements__pagination-label pagination
+
               +pagination([
                 'blank.link', 
                 'blank.link', 
@@ -117,13 +148,16 @@ block content
                 'blank.link',
               ])
 
-        .form-elements__middle
-          .form-elements__dropdown-rooms
-            +dropdown({label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты']})
-          .form-elements__dropdown-guests
-            +dropdown-guests({label: "dropdown"})
 
-        .form-elements__bottom 
+        
+        .form-elements__row.form-elements__row_middle
+          .form-elements__row-dropdowns
+            .form-elements__dropdown-rooms
+              +dropdown({label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты']})
+            .form-elements__dropdown-guests
+              +dropdown-guests({label: "dropdown"})
+
+
           .form-elements__lists
             .form-elements__checkbox-list
               .form-elements__expandable-checkbox
@@ -173,17 +207,86 @@ block content
                 ]
               })
 
-          .form-elements__footer
-            .form-elements__features
-              .form-elements__feature
-                +feature({icon: "smile", title: "Комфорт", descr: "Шумопоглощающие стены"})
-              .form-elements__feature
-                +feature({icon: "city", title: "Удобство", descr: "Окно в каждой из спален"})
 
-            .form-elements__comment 
-              +comment({src: "assets/img/avatar-murad.jpg", time: "5 дней назад", name: 'Мурад Сарафанов', like: {count: "12", checked: "checked"}, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+
+        .form-elements__row.form-elements__row_bottom
+          .form-elements__features
+            .form-elements__feature
+              +feature({icon: "smile", title: "Комфорт", descr: "Шумопоглощающие стены"})
+            .form-elements__feature
+              +feature({icon: "city", title: "Удобство", descr: "Окно в каждой из спален"})
+
+          .form-elements__comment 
+            +comment({src: "assets/img/avatar-murad.jpg", time: "5 дней назад", name: 'Мурад Сарафанов', like: {count: "12", checked: "checked"}, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+
+      //-   .form-elements__middle
+          //- .form-elements__dropdown-rooms
+          //-   +dropdown({label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты']})
+          //- .form-elements__dropdown-guests
+          //-   +dropdown-guests({label: "dropdown"})
+
+      //-   .form-elements__bottom 
+          //- .form-elements__lists
+          //-   .form-elements__checkbox-list
+          //-     .form-elements__expandable-checkbox
+          //-       +checkbox-list({
+          //-         title: "expandable checkbox list",
+          //-         items: [
+          //-           {text:"Завтрак"}, 
+          //-           {text:"Письменный стол", checked: "checked"}, 
+          //-           {text:"Стул для кормления", checked: "checked"},
+          //-           {text:"Кроватка", checked: "checked"},
+          //-           {text:"Телевизор"},
+          //-           {text:"Шампунь"},
+          //-           {text:"Телевизор"},
+          //-           {text:"Шампунь"}
+          //-         ]
+          //-       })
+
+          //-     .form-elements__expandable-checkbox 
+          //-       +checkbox-list({
+          //-         title: "expandable checkbox list",
+          //-         items: [
+          //-           {text:"Завтрак"}, 
+          //-           {text:"Письменный стол", checked: "checked"}, 
+          //-           {text:"Стул для кормления", checked: "checked"},
+          //-           {text:"Кроватка", checked: "checked"},
+          //-           {text:"Телевизор"},
+          //-           {text:"Шампунь"},
+          //-           {text:"Телевизор"},
+          //-           {text:"Шампунь"}
+          //-         ]
+          //-       }) 
+
+          //-   .form-elements__rich-checkboxes
+          //-     p.form-elements__rich-checkboxes-label Rich Checkbox Buttons
+          //-     .form-elements__rich-checkbox
+          //-       +input({type: "checkbox", style: "rich", label: "Широкий коридор", text: "Ширина коридоров в номере не менее 91 см.", name: "check it thrice"})
+          //-     .form-elements__rich-checkbox
+          //-       +input({type: "checkbox", style: "rich", label: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист и проводит до номера.", name: "check it thrice"})
+
+          //-   .form-elements__bullet-list
+          //-     +list({
+          //-       title: "bullet list",
+          //-       items: [
+          //-         'Нельзя с питомцами',
+          //-         'Без вечеринок и мероприятий',
+          //-         'Время прибытия — после 13:00, а выезд до 12:00'
+          //-       ]
+          //-     })
+
+      //-     .form-elements__footer
+            //- .form-elements__features
+            //-   .form-elements__feature
+            //-     +feature({icon: "smile", title: "Комфорт", descr: "Шумопоглощающие стены"})
+            //-   .form-elements__feature
+            //-     +feature({icon: "city", title: "Удобство", descr: "Окно в каждой из спален"})
+
+            //- .form-elements__comment 
+            //-   +comment({src: "assets/img/avatar-murad.jpg", time: "5 дней назад", name: 'Мурад Сарафанов', like: {count: "12", checked: "checked"}, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
 
     //- section.cards
+      
       .cards__header
         +uikit-header
       
