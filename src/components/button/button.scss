@@ -1,4 +1,4 @@
-@import '../../scss/utils/vars';
+@import '~/scss/utils/vars';
 
 .button {
   display: block;
@@ -40,7 +40,7 @@
     background: #FFFFFF;
     color: $main;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       right: 0;
@@ -71,7 +71,7 @@
 
   &_big {
     position: relative;
-    width: 320px;
+    width: 100%;
     text-align: center;
     &:hover,
     &:focus {
@@ -80,7 +80,7 @@
     &::after {
       position: absolute;
       font-family: 'icomoon';
-      content: "\e909";
+      content: '\e909';
       right: 13px;
       font-size: 20px;
       font-weight: 400;
