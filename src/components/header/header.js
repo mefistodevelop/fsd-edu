@@ -9,8 +9,13 @@ window.$ = window.jQuery = require('jquery');
   const $header = $('.js-header');
   const $buttonLogin = $('.js-header__button_login');
   const $buttonReg = $('.js-header__button_registration');
+  const $navList = $('.js-header__list');
+  const $headerLink = $('.header__link');
 
   $header.each(function(i){
+    
+    $($navList).eq(i).find($headerLink).first().addClass('header__link_active');
+
     $($burger).eq(i).on('click.header-burger', function(){
       $(this).toggleClass('header__burger_open');
       $(this).prev().toggleClass('header__list_visible');

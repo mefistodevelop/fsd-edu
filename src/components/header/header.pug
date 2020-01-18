@@ -26,7 +26,7 @@ mixin header(options)
         img(src="assets/img/toxin-logo.svg" width="106" alt="логотип Toxin")
 
       nav.header__navigation
-        ul(class="header__list"+mod)
+        ul(class="header__list js-header__list"+mod)
           each item in items
             li(class= item.isDropdown ? "header__item header__item_dropdown" : "header__item")
               a(class="header__link"
