@@ -1,23 +1,26 @@
 .uikit-header {
-  font-size: 1rem;
-  padding-top: 3%;
-  padding-left: 3.4%;
-  margin-bottom: 3.95em;
+  padding-top: 30px;
+  padding-left: 30px;
+  margin-bottom: 67px;
+  > img {
+    width: 48px;
+    height: 48px;
+  }
 
   &__logo {
     width: 3em;
     height: 3em;  
   }
 
-  @media(max-width: 992px) {
-    font-size: 1em;
-  }
+  // @media(max-width: 992px) {
+  //   font-size: 1em;
+  // }
 
-  @media(max-width: 576px) {
-    font-size: .8em;
-  }
+  // @media(max-width: 576px) {
+  //   font-size: .8em;
+  // }
   
-  @media(max-width: 320px) {
-    font-size: .5em;
-  }
+  // @media(max-width: 320px) {
+  //   font-size: .5em;
+  // }
 }
