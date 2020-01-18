@@ -3,12 +3,12 @@ include ../dropdown-guests/dropdown-guests
 include ../button/button
 
 mixin rooms-card
-  .rooms
-    h2.rooms__title Найдём номера под ваши пожелания
-    form(class="rooms__form" action="blank.link" method="post")
-      .rooms__dropdowns
+  .rooms-card
+    h2.rooms-card__title Найдём номера под ваши пожелания
+    form(class="rooms-card__form" action="blank.link" method="post")
+      .rooms-card__dropdowns
         +dropdown-date({label: "прибытие", name: "arriving"})
         +dropdown-date({label: "выезд", name: "leaving"})
         +dropdown-guests({label: "гости"})
-      .rooms__button
+      .rooms-card__button
         +button({type: "submit", style: "big", text: "подобрать номер"})

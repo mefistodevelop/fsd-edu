@@ -10,10 +10,10 @@
 
 @mixin card {
   width: 380px;
-  padding-top: 40px;
-  padding-right: 28px;
-  padding-bottom: 30px;
-  padding-left: 30px;
+  padding-top: 2.8em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  padding-left: 2em;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -21,12 +21,14 @@
 }
 
 @mixin card-title {
-  margin-bottom: 20px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: .83em;
 
-  font-family: Quicksand, "Open Sans", Arial, sans-serif;
+  font-family: $quicksand;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 1.714em;
+  line-height: 1.25em;
   color: $shade-100;
 }
 
