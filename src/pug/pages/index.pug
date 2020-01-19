@@ -2,26 +2,29 @@ extends ../templates/uikit-main.pug
 include ../mixins/uikit.pug
 
 block content
-  .container
-    +uikit-header
+  
 
-    section.colors-type
-      .colors-type__colors
-        ul.color
-          +uikit-color("Dark Shade 100%", "#1F2041", "dshade-100")
-          +uikit-color("Dark Shade 75%", "#1F2041", "dshade-75")
-          +uikit-color("Dark Shade 50%", "#1F2041", "dshade-50")
-          +uikit-color("Dark Shade 25%", "#1F2041", "dshade-25")
-          +uikit-color("Dark Shade 5%", "#1F2041", "dshade-5")
-          +uikit-color("Purple", "#BC9CFF", "purple")
-          +uikit-color("Green", "#6FCF97", "green")
+  section.colors-type
+    .container
+      +uikit-header
 
-      .colors-type__types
-        ul.types
-          +uikit-types("H1", "This one is the sub-section or widget title", "big-title")
-          +uikit-types("H2", "Next one is the item title inside widgets", "middle-title")
-          +uikit-types("H3", "This is a label or CTA text", "small-title")
-          +uikit-types("Body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.", "main-text")
+      .colors-type__container
+        .colors-type__colors
+          ul.color
+            +uikit-color("Dark Shade 100%", "#1F2041", "dshade-100")
+            +uikit-color("Dark Shade 75%", "#1F2041", "dshade-75")
+            +uikit-color("Dark Shade 50%", "#1F2041", "dshade-50")
+            +uikit-color("Dark Shade 25%", "#1F2041", "dshade-25")
+            +uikit-color("Dark Shade 5%", "#1F2041", "dshade-5")
+            +uikit-color("Purple", "#BC9CFF", "purple")
+            +uikit-color("Green", "#6FCF97", "green")
+
+        .colors-type__types
+          ul.types
+            +uikit-types("H1", "This one is the sub-section or widget title", "big-title")
+            +uikit-types("H2", "Next one is the item title inside widgets", "middle-title")
+            +uikit-types("H3", "This is a label or CTA text", "small-title")
+            +uikit-types("Body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.", "main-text")
 
   section.form-elements
     .container
@@ -219,78 +222,14 @@ block content
           .form-elements__comment 
             +comment({src: "assets/img/avatar-murad.jpg", time: "5 дней назад", name: 'Мурад Сарафанов', like: {count: "12", checked: "checked"}, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
 
-      //-   .form-elements__middle
-          //- .form-elements__dropdown-rooms
-          //-   +dropdown({label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты']})
-          //- .form-elements__dropdown-guests
-          //-   +dropdown-guests({label: "dropdown"})
 
-      //-   .form-elements__bottom 
-          //- .form-elements__lists
-          //-   .form-elements__checkbox-list
-          //-     .form-elements__expandable-checkbox
-          //-       +checkbox-list({
-          //-         title: "expandable checkbox list",
-          //-         items: [
-          //-           {text:"Завтрак"}, 
-          //-           {text:"Письменный стол", checked: "checked"}, 
-          //-           {text:"Стул для кормления", checked: "checked"},
-          //-           {text:"Кроватка", checked: "checked"},
-          //-           {text:"Телевизор"},
-          //-           {text:"Шампунь"},
-          //-           {text:"Телевизор"},
-          //-           {text:"Шампунь"}
-          //-         ]
-          //-       })
-
-          //-     .form-elements__expandable-checkbox 
-          //-       +checkbox-list({
-          //-         title: "expandable checkbox list",
-          //-         items: [
-          //-           {text:"Завтрак"}, 
-          //-           {text:"Письменный стол", checked: "checked"}, 
-          //-           {text:"Стул для кормления", checked: "checked"},
-          //-           {text:"Кроватка", checked: "checked"},
-          //-           {text:"Телевизор"},
-          //-           {text:"Шампунь"},
-          //-           {text:"Телевизор"},
-          //-           {text:"Шампунь"}
-          //-         ]
-          //-       }) 
-
-          //-   .form-elements__rich-checkboxes
-          //-     p.form-elements__rich-checkboxes-label Rich Checkbox Buttons
-          //-     .form-elements__rich-checkbox
-          //-       +input({type: "checkbox", style: "rich", label: "Широкий коридор", text: "Ширина коридоров в номере не менее 91 см.", name: "check it thrice"})
-          //-     .form-elements__rich-checkbox
-          //-       +input({type: "checkbox", style: "rich", label: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист и проводит до номера.", name: "check it thrice"})
-
-          //-   .form-elements__bullet-list
-          //-     +list({
-          //-       title: "bullet list",
-          //-       items: [
-          //-         'Нельзя с питомцами',
-          //-         'Без вечеринок и мероприятий',
-          //-         'Время прибытия — после 13:00, а выезд до 12:00'
-          //-       ]
-          //-     })
-
-      //-     .form-elements__footer
-            //- .form-elements__features
-            //-   .form-elements__feature
-            //-     +feature({icon: "smile", title: "Комфорт", descr: "Шумопоглощающие стены"})
-            //-   .form-elements__feature
-            //-     +feature({icon: "city", title: "Удобство", descr: "Окно в каждой из спален"})
-
-            //- .form-elements__comment 
-            //-   +comment({src: "assets/img/avatar-murad.jpg", time: "5 дней назад", name: 'Мурад Сарафанов', like: {count: "12", checked: "checked"}, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
-
-    //- section.cards
+  section.cards
+    .container
       
       .cards__header
         +uikit-header
       
-      .cards__wrapper
+      .cards__container
         .cards__col.cards__col-1
           .cards__item
             +rooms-card
@@ -333,7 +272,9 @@ block content
                 {src: "assets/img/bottom-slide.jpg", alt: "Общий вид комнаты"},
               ]
             })
-          
+
+
+
   section.headers
     .container
       .headers__header 
