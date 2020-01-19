@@ -6,9 +6,13 @@
     padding-left: 50px;
     font-weight: 400;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 1.714em;
     color: $shade-75;
     cursor: pointer;
+
+    @media (max-width: 420px) {
+      font-size: 12px;
+    }
   }  
   &__switch {
     position: absolute;

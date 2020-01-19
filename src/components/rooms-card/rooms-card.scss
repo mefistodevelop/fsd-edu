@@ -11,15 +11,23 @@
     @include card-title;
   }
 
+
   &__dropdowns {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 2.286em;
+
+    @media (max-width: 420px) {
+      > .dropdown-date {
+        max-width: 100%;
+      }
+    }
+
     
     :nth-child(n):not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
   }
 

@@ -11,8 +11,10 @@ mixin registration-card
         +input({type: "text", name: "last name", placeholder: "Фамилия", required: "required"})
 
       .registration__radios
-        +input({type: "radio", name: "gender", text: "Мужчина", value: "male", checked: "checked"})
-        +input({type: "radio", name: "gender", text: "Женщина", value: "female"})
+        .registration__radio
+          +input({type: "radio", name: "gender", text: "Мужчина", value: "male", checked: "checked"})
+        .registration__radio
+          +input({type: "radio", name: "gender", text: "Женщина", value: "female"})
 
       .registration__birthdate
         +input({type: "text", name: "date", label: "дата рождения", placeholder: "ДД.ММ.ГГГГ"})

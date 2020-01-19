@@ -1,22 +1,23 @@
-@import "../../scss/utils/vars.scss";
+@import '~/scss/utils/vars';
 
 .room-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-size: 14px;
 
   &__room {
     font-family: $quicksand;
     font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.857em;
+    line-height: 1.25em;
     text-transform: uppercase;
     color: $shade-100;
   }
 
   &__number {
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 2.1em;
+    line-height: 1.214em;
   }
 
   &__luxe {
@@ -25,15 +26,16 @@
   }
 
   &__price {
+    padding-top: 9px;
     font-family: Montserrat;
     font-weight: 700;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 1em;
+    line-height: 1.286em;
     color: $shade-50;
 
     &-text {
-      font-size: 12px;
-      line-height: 15px;
+      font-size: 0.857em;
+      line-height: 1.25em;
       font-weight: 400;
     }
   }

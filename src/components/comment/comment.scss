@@ -4,17 +4,21 @@
   max-width: 724px;
   font-weight: 400;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 1.8em;
   color: $shade-75;
+
+  @media (max-width: 576px) {
+    font-size: 12px;
+  }
 
   &__header {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 10px;
+    margin-bottom: 0.6em;
   }
 
   &__avatar {
-    margin-right: 10px;
+    margin-right: 0.65em;
     width: 48px;
     height: 48px;
     object-fit: cover;
@@ -31,9 +35,9 @@
   }
 
   &__like {
-    padding-top: 3px;
-    padding-left: 5px;
-    margin-right: 16px;
+    padding-top: 0.214em;
+    padding-left: 0.357em;
+    margin-right: 0.857em;
   }
 
   &__text {

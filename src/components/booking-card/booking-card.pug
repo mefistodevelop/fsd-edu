@@ -18,7 +18,7 @@ mixin booking-card(options)
 
       .booking-card__taxes
         .booking-card__taxes-block
-          p.booking-card__taxes-item #{price} x 4 суток
+          p.booking-card__taxes-item= options.price + ' x 4 суток'
           span 39 960₽
 
         .booking-card__taxes-block

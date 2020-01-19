@@ -1,5 +1,5 @@
-@import "../../scss/utils/vars.scss";
-@import "../../scss/utils/mixins.scss";
+@import '~/scss/utils/vars';
+@import '~/scss/utils/mixins';
 
 .booking-card {
   @include card;
@@ -14,7 +14,7 @@
 
   &__header {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 1.357em;
   }
   
   &__dropdowns {
@@ -31,12 +31,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 1.643em;
 
     &-item {
       margin: 0;
       padding: 0;
-      width: 214px;
+      max-width: 217px;
       margin-right: 5px;
     }
 
@@ -45,10 +45,10 @@
       flex-wrap: wrap;
       justify-content: space-between;
       width: 100%;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
 
-      font-size: 14px;
-      line-height: 24px;
+      font-size: 1em;
+      line-height: 1.65em;
       color: $shade-75;
       &:last-of-type {
         margin-bottom: 0;

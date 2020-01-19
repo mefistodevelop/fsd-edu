@@ -6,7 +6,8 @@ mixin room-header(options)
   - const price = options.price + "₽"
 
   .room-header
-    .room-header__room № 
+    .room-header__room
+      | № 
       span.room-header__number= options.number
       if (options.isLuxe)
         span.room-header__luxe  люкс
