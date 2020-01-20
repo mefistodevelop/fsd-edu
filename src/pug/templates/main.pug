@@ -1,0 +1,74 @@
+include ../../components/header/header
+include ../../components/footer/footer
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    block title
+      
+  body
+    +header({
+      signin: 'войти',
+      signup: 'зарегистрироваться',
+      items: [
+        {href: 'blank.link', text: 'О нас'},
+        {text: 'Услуги', isDropdown: true},
+        {href: 'blank.link', text: 'Вакансии'},
+        {href: 'blank.link', text: 'Новости'},
+        {isDropdown: true, text: 'Соглашения'},
+      ]
+    })
+  
+
+    block content
+
+
+    +footer({
+      description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+      blocks: [
+        {
+          title: 'навигация',
+          items: [
+            {text: 'О нас', href: 'blank.link'},
+            {text: 'Новости', href: 'blank.link'},
+            {text: 'Служба поддержки', href: 'blank.link'},
+            {text: 'Услуги', href: 'blank.link'},
+          ]
+        },
+
+        {
+          title: 'о нас',
+          items: [
+            {text: 'О сервисе', href: 'blank.link'},
+            {text: 'Наша команда', href: 'blank.link'},
+            {text: 'Вакансии', href: 'blank.link'},
+            {text: 'Инвесторы', href: 'blank.link'},
+          ]
+        },
+
+        {
+          title: 'Служба поддержки',
+          items: [
+            {text: 'Соглашения', href: 'blank.link'},
+            {text: 'Сообщества', href: 'blank.link'},
+            {text: 'Связь с нами', href: 'blank.link'},
+          ]
+        }
+      ],
+
+      subscribe: {
+        title: 'Подписка',
+        text: 'Получайте специальные предложения и новости сервиса'
+      },
+
+      copyright: 'Copyright © 2018 Toxin отель. Все права зачищены.',
+
+      socials: {
+        twitter: 'blank.link',
+        facebook: 'blank.link',
+        instagram: 'blank.link'
+      }
+    })
