@@ -59,22 +59,22 @@ mixin footer(options)
             +input({type: 'email', isButton: true, name: 'email', placeholder: 'Your email address'})
 
 
-    .footer__page-footer
-      .footer__container.footer__container_bottom
-        p.footer__copyright= copyright
-        
-        .footer__socials
-          a.footer__social(href=socials.twitter || 'blank.link')
-            span.visually-hidden Twitter
-            span.icon-twitter
+      .footer__page-footer
+        .footer__container.footer__container_bottom
+          p.footer__copyright= copyright
+          
+          .footer__socials
+            a.footer__social(href=socials.twitter || 'blank.link')
+              span.visually-hidden Twitter
+              span.icon-twitter
 
-          a.footer__social(href=socials.facebook || 'blank.link')
-            span.visually-hidden Facebook
-            span.icon-facebook-square
-            
-          a.footer__social(href=socials.instagram || 'blank.link')
-            span.visually-hidden Instagram
-            span.icon-instagram
+            a.footer__social(href=socials.facebook || 'blank.link')
+              span.visually-hidden Facebook
+              span.icon-facebook-square
+              
+            a.footer__social(href=socials.instagram || 'blank.link')
+              span.visually-hidden Instagram
+              span.icon-instagram
   
   else 
     footer.footer.footer_simple

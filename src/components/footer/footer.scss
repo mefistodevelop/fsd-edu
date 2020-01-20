@@ -12,8 +12,8 @@
 
   &__container {
     @include container;
-    padding-top: 7%;
-    padding-bottom: 5.7%;
+    padding-top: 7.143em;
+    padding-bottom: 7.143em;
     justify-content: space-between;
 
     @media (max-width: 992px) {
@@ -138,7 +138,7 @@
   &__list {
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-height: 40px;
 
     display: flex;
     flex-direction: column;
@@ -148,6 +148,10 @@
 
   &__item {
     margin-bottom: 1.5em;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
 
