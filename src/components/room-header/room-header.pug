@@ -1,0 +1,16 @@
+//- options.number - номер комнаты
+    options.isLuxe(boolean) - определяет является ли номер люксовым. По умолчанию false
+    options.price - цена номера в сутки
+
+mixin room-header(options)
+  - const price = options.price + "₽"
+
+  .room-header
+    .room-header__room
+      | № 
+      span.room-header__number= options.number
+      if (options.isLuxe)
+        span.room-header__luxe  люкс
+      
+    .room-header__price= price
+      span.room-header__price-text  в сутки 

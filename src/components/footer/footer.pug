@@ -1,0 +1,99 @@
+//- options.description(string) - текст под логотипом
+    options.blocks(array) - массив объектов - блоков ссылок. Каждый объект принимает:
+                            title(string) - заголовок блока
+                            items(array) - массив объектов - значений ссылок. Каждый объект принимает:
+                              href - адрес ссылки
+                              text - текст ссылки
+    
+    options.subscribe(object) - объект, принимает данные для блока subscribe: title(string), text(string)
+    options.copyright(string) - текст копирайта
+    options.socials(object) - принимает ссылки для соцсетей. Пример: twitter: 'some.link'
+    options.isSimple(bool) - используется для создания простого футера без ссылок
+    
+
+include ../input/input
+
+mixin footer(options)
+
+  if !options
+    - options = {}
+
+  if !options.blocks
+    - options.blocks = []
+  
+  if !options.socials
+    - options.socials = {}
+  
+  if !options.subscribe
+    - options.subscribe = {}
+
+
+  - const {description, blocks, subscribe, copyright, socials} = options;
+
+  mixin li(items)
+    each item in items
+      li(class='footer__item') 
+        a(class='footer__link' href= item.href ? item.href : 'blank-link')= item.text
+
+
+  if !options.isSimple
+    footer.footer
+      .footer__container
+
+        .footer__description
+          a.footer__logo(href="index.html")
+            img(src="assets/img/toxin-logo.svg" width="106" alt="логотип Toxin")
+          p.footer__description-text= description
+
+        .footer__link-blocks
+          each block in blocks
+            .footer__link-block
+              h3.footer__title= block.title
+              ul.footer__list
+                +li(block.items)
+
+        .footer__subscribe
+          h3.footer__title= subscribe.title || 'subscribe'
+          p.footer__subscribe-text= subscribe.text
+          .footer__subscribe-field
+            +input({type: 'email', isButton: true, name: 'email', placeholder: 'Your email address'})
+
+
+      .footer__page-footer
+        .footer__container.footer__container_bottom
+          p.footer__copyright= copyright
+          
+          .footer__socials
+            a.footer__social(href=socials.twitter || 'blank.link')
+              span.visually-hidden Twitter
+              span.icon-twitter
+
+            a.footer__social(href=socials.facebook || 'blank.link')
+              span.visually-hidden Facebook
+              span.icon-facebook-square
+              
+            a.footer__social(href=socials.instagram || 'blank.link')
+              span.visually-hidden Instagram
+              span.icon-instagram
+  
+  else 
+    footer.footer.footer_simple
+      .footer__container.footer__container_simple
+        .footer__description.footer__description_simple
+          a.footer__logo.footer__logo_simple(href="index.html")
+            img(src="assets/img/toxin-logo.svg" width="106" alt="логотип Toxin")
+          
+          p.footer__description-text= description
+
+        .footer__socials.footer__socials_simple
+            a.footer__social(href=socials.twitter || 'blank.link')
+              span.visually-hidden Twitter
+              span.icon-twitter
+
+            a.footer__social(href=socials.facebook || 'blank.link')
+              span.visually-hidden Facebook
+              span.icon-facebook-square
+              
+            a.footer__social(href=socials.instagram || 'blank.link')
+              span.visually-hidden Instagram
+              span.icon-instagram

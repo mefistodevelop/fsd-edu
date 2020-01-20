@@ -1,0 +1,18 @@
+mixin dropdown(options)
+  .dropdown
+    label.dropdown__label= options.label
+      span.dropdown__arrow &#xe901
+      input(class="dropdown__top",
+             type="text",
+             placeholder="Выберите удобства",
+             readonly)
+      .dropdown__menu.hidden
+        ul.dropdown__items
+          each item in options.items
+            li.dropdown__item
+              .dropdown__element= item
+              .dropdown__quantity
+                div.dropdown__control.dropdown__control_minus.dropdown__control_disabled -
+                span.dropdown__score 0
+                div.dropdown__control.dropdown__control_plus +
+

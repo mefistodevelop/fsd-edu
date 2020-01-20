@@ -1,0 +1,27 @@
+@import "utils/libs.scss";
+@import "utils/vars.scss";
+@import "utils/mixins.scss";
+@import "utils/fonts.scss";
+@import "uikit.scss";
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $montserrat;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+}

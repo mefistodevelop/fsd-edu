@@ -1,0 +1,23 @@
+//- options.src - ссылка на картинку
+    options.name - имя автора комментария
+    options.time - время создания комментария
+    options.text - текст комментария
+    options.like{} - объект, принимает данные для кнопки лайка(count - количество лайков, checked - нажатая по умолчанию)
+
+include ../like-button/like-button
+
+mixin comment(options)
+  - let likeCount = options.like.count;
+  - let likeChecked = options.like.checked;
+  
+  .comment
+    .comment__header
+      img(src= options.src class="comment__avatar" width="48" height="48" alt="Фото автора")
+      .comment__top
+        p.comment__title= options.name
+        time(class="comment__time" datetime="2019-12-16 20:00")= options.time 
+    .comment__content
+      .comment__like.like-button
+        +like-button({count: likeCount, checked: likeChecked})
+      p(class="comment__text")= options.text
+        

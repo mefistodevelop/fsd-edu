@@ -1,0 +1,73 @@
+@import '~/scss/utils/vars';
+@import '~/scss/utils/mixins';
+
+.registration {
+  @include card;
+  position: relative;
+  z-index: 1;
+  min-height: 646px;
+  background-color: #ffffff;
+  font-size: 14px;
+
+  &__title {
+    @include card-title;
+  }
+
+  &__name-fields,
+  &__data {
+    margin-bottom: 0.6em;
+
+    @media (max-width: 420px) {
+      margin-bottom: 1.5em;
+    }
+    .input:first-child {
+      margin-bottom: 0.714em;
+    }
+  }
+
+  &__radios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 220px;
+    margin-bottom: 1.55em;
+
+    @media (max-width: 420px) {
+      margin-bottom: 1.7em;
+    }
+  }
+
+  &__radio {
+    min-width: 100px;
+  }
+
+  &__birthdate {
+    margin-bottom: 1.429em;
+  }
+
+  &__toggle {
+    margin-bottom: 1.5em;
+  }
+
+  &__button {
+    @include big-button;
+    margin-bottom: 2.286em;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      padding-top: 12px;
+
+      @media (max-width: 420px) {
+        font-size: 1.3em;
+      }
+    }
+
+    &-button {
+      @include bordered-button;
+    }
+  }
+}

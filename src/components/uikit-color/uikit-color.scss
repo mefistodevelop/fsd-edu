@@ -1,0 +1,74 @@
+@import '../../scss/utils/vars';
+
+.color {
+  margin: 0;
+  padding: 0;
+  font-size: 1.357em;
+  line-height: 1.526em;
+  
+  @media(max-width: 992px) {
+    font-size: 1.1em;
+  }
+  @media(max-width: 576px) {
+    font-size: 1.357em;
+  }
+  @media(max-width: 390px) {
+    font-size: 1em;
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 1.053em;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  &__image {
+    margin-right: 2.105em;
+    width: 3.684em;
+    height: 3.684em;
+    border-radius: 6px;
+    &_dshade-100 {
+      background-color: $shade-100;
+    }
+    &_dshade-75 {
+      background-color: $shade-75;
+    }
+    &_dshade-50 {
+      background-color:$shade-50;
+    }
+    &_dshade-25 {
+      background-color: $shade-25;
+    }
+    &_dshade-5 {
+      background-color: $shade-5;
+    }
+    &_purple {
+      background-color: $main;
+    }
+    &_green {
+      background-color: $secondary;
+    }
+  }
+  &__content {
+    margin: 0;
+    padding: 0;
+    padding-top: 2px;
+
+    font-family: $quicksand;
+    font-weight: 700;
+    color: #1F2041;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    padding-top: 5px;
+  }
+
+  &__descr {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+  }
+}

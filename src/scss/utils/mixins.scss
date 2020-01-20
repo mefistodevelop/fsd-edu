@@ -1,0 +1,86 @@
+@mixin label {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: $shade-100;
+}
+
+@mixin card {
+  max-width: 380px;
+  padding-top: 2.8em;
+  padding-right: 2.14em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: -2;
+
+  @media (max-width: 576px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 11px;
+  }
+}
+
+@mixin card-title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: .83em;
+
+  font-family: $quicksand;
+  font-weight: 700;
+  font-size: 1.714em;
+  line-height: 1.25em;
+  color: $shade-100;
+}
+
+@mixin hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+@mixin container {
+  display: flex;
+  max-width: 1178px;
+  margin: 0 auto;
+  padding-left: 17px;
+
+  @media (max-width: 1250px) {
+    padding-right: 17px;
+  }
+}
+
+@mixin nav-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $shade-50;
+  text-decoration: none;
+  text-transform: capitalize;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    color: $shade-100;
+  }
+}
+
+@mixin big-button {
+  max-width: 320px;
+  width: 100%;
+  height: 44px;
+}
+
+@mixin bordered-button {
+  max-width: 99px;
+  width: 100%;
+  height: 44px;
+}

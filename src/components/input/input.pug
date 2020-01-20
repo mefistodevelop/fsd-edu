@@ -1,0 +1,48 @@
+//-
+  options.name - form element name
+  options.type - input type
+  options.placeholder - input placeholder
+  options.required - input required
+  options.text - подпись к checkbox и radio
+  options.label - заголовок rich checkbox
+  options.checked - выбранный по умолчанию radio/checkbox
+  options.value - значение value для radio
+  options.isButton - если true, добавляет в поле инпута кнопку отправки данных этого поля
+
+mixin input(options)
+  .input
+    - if (options.type === "text" || options.type === "email" || options.type === "password" || options.type === "date")
+      - if (options.isButton)
+          form.input__form(action="blank-link" method="post")
+            label(class= "input__label input__label_button")= options.label  
+              input(class= options.label ? "input__field input__field_labeled" : "input__field",
+                    type = options.type, 
+                    name = options.name, 
+                    placeholder = options.placeholder,
+                    required = options.required
+              )
+              button(class = "input__button", type="submit") &#xe909
+      - else
+        label.input__label= options.label  
+          input(class= options.label ? "input__field input__field_labeled" : "input__field",
+                type = options.type,
+                name = options.name, 
+                placeholder = options.placeholder,
+                required = options.required,
+                autocomplete="on"
+          )
+        
+
+    - if (options.type === "radio" || options.type === "checkbox")
+      label(class = "input__label_" + options.type)
+        input(class = "input__" + options.type 
+              type = options.type, 
+              name = options.name, 
+              checked = options.checked, 
+              value = options.value
+        )
+        div(class= options.style ? "input__inner input__inner_rich" : "input__inner")
+          - if (options.style === "rich")
+            p.input__title= options.label
+          div(class= options.style ? "input__text input__text_rich" : "input__text")= options.text
+        span(class = "input__checkmark input__checkmark_" + options.type)

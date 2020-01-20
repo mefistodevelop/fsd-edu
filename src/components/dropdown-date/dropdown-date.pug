@@ -1,0 +1,7 @@
+mixin dropdown-date(options)
+  - const blockClassName = options.type === "filter" ? "dropdown-date dropdown-date_filter" : "dropdown-date"
+  - const inputClassName = options.type === "filter" ? "dropdown-date__field dropdown-date__field_filter" : "dropdown-date__field"
+  
+  div(class= blockClassName)
+    label.dropdown-date__label= options.label
+      input(class= inputClassName type="text" name= options.name placeholder="ДД.ММ.ГГГГ" readonly)
