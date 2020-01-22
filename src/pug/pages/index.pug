@@ -1,9 +1,9 @@
 extends ../templates/main.pug
+include ../mixins/main.pug
 
 block title
   title Landing page
 
 block content
-  main.container
-    .page-wrapper
-      h1 hohhohoh
+  main
+    +landing
