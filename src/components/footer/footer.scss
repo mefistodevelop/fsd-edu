@@ -53,11 +53,7 @@
       text-align: center;
     }
 
-    @media (min-width: 320px) and (max-width: 576px) {
-      max-width: 100%;
-      // margin-bottom: 15%;
-    }
-
+    
     &-text {
       margin: 0;
       padding: 0;
@@ -218,6 +214,10 @@
     font-size: 1em;
     line-height: 1.214em;
     color: $shade-75;
+
+    @media (max-width: 576px) {
+      font-size: .9em;
+    }
   }
 
 
