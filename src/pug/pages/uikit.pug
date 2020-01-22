@@ -280,103 +280,91 @@ block content
       .headers__header 
         img.uikit-header__logo(src="assets/img/uikit-logo.svg", width="48" height="48" alt="uikit logo")
       
-    .headers__item
-      +header({
-        isUikit: true,
-        items: [
-          {href: "blank.link", text: "home"},
-          {href: "blank.link", text: "about us"},
-          {text: "services", isDropdown: true},
-          {href: "blank.link", text: "careers"},
-          {href: "blank.link", text: "news"},
-          {href: "blank.link", text: "documentation"},
-        ]
-      })
-
-    .headers__item
-      +header({
-        isUikit: true,
-        isLogin: true,
-        user: {
-          name: "Cosmin Negoita",
-          href: "blank.link"
-        },
-        items: [
-          {href: "blank.link", text: "home"},
-          {href: "blank.link", text: "about us"},
-          {isDropdown: true, text: "services"},
-          {href: "blank.link", text: "careers"},
-          {href: "blank.link", text: "news"},
-          {href: "blank.link", text: "documentation"},
-        ]
-      })
-
-    //- .headers__item
+      .headers__item
         +header({
-          signin: "войти",
-          signup: "зарегистрироваться",
+          isUikit: true,
           items: [
-            {href: "blank.link", text: "О нас"},
-            {text: "Услуги", isDropdown: true},
-            {href: "blank.link", text: "Вакансии"},
-            {href: "blank.link", text: "Новости"},
-            {isDropdown: true, text: "Соглашения"},
+            {href: "blank.link", text: "home"},
+            {href: "blank.link", text: "about us"},
+            {text: "services", isDropdown: true},
+            {href: "blank.link", text: "careers"},
+            {href: "blank.link", text: "news"},
+            {href: "blank.link", text: "documentation"},
           ]
         })
 
-    .headers__item
-      +footer({
-        description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
-        blocks: [
-          {
-            title: 'navigation',
-            items: [
-              {href: 'blank.link', text: 'About Us'},
-              {href: 'blank.link', text: 'News'},
-              {href: 'blank.link', text: 'Support'},
-              {href: 'blank.link', text: 'Products'},
-            ]
+      .headers__item
+        +header({
+          isUikit: true,
+          isLogin: true,
+          user: {
+            name: "Cosmin Negoita",
+            href: "blank.link"
           },
-          {
-            title: 'about us',
-            items: [
-              {href: 'blank.link', text: 'Who we are'},
-              {href: 'blank.link', text: 'Our team'},
-              {href: 'blank.link', text: 'Careers'},
-              {href: 'blank.link', text: 'Investors'},
-            ]
+          items: [
+            {href: "blank.link", text: "home"},
+            {href: "blank.link", text: "about us"},
+            {isDropdown: true, text: "services"},
+            {href: "blank.link", text: "careers"},
+            {href: "blank.link", text: "news"},
+            {href: "blank.link", text: "documentation"},
+          ]
+        })
+
+
+      .headers__item
+        +footer({
+          description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+          blocks: [
+            {
+              title: 'navigation',
+              items: [
+                {href: 'blank.link', text: 'About Us'},
+                {href: 'blank.link', text: 'News'},
+                {href: 'blank.link', text: 'Support'},
+                {href: 'blank.link', text: 'Products'},
+              ]
+            },
+            {
+              title: 'about us',
+              items: [
+                {href: 'blank.link', text: 'Who we are'},
+                {href: 'blank.link', text: 'Our team'},
+                {href: 'blank.link', text: 'Careers'},
+                {href: 'blank.link', text: 'Investors'},
+              ]
+            },
+            {
+              title: 'support',
+              items: [
+                {href: 'blank.link', text: 'Documentation'},
+                {href: 'blank.link', text: 'Community'},
+                {href: 'blank.link', text: 'Get in Touch'},
+              ]
+            }
+          ],
+
+          subscribe: {
+            title: 'Subscribe to our newsletter',
+            text: 'Receive our latest news and promotions in your inbox!'
           },
-          {
-            title: 'support',
-            items: [
-              {href: 'blank.link', text: 'Documentation'},
-              {href: 'blank.link', text: 'Community'},
-              {href: 'blank.link', text: 'Get in Touch'},
-            ]
+
+          copyright: 'Copyright © 2018 Toxin UI Kit. All rights reserved.',
+
+          socials: {
+            twitter: 'blank.link',
+            facebook: 'blank.link',
+            instagram: 'blank.link'
           }
-        ],
+        })
 
-        subscribe: {
-          title: 'Subscribe to our newsletter',
-          text: 'Receive our latest news and promotions in your inbox!'
-        },
-
-        copyright: 'Copyright © 2018 Toxin UI Kit. All rights reserved.',
-
-        socials: {
-          twitter: 'blank.link',
-          facebook: 'blank.link',
-          instagram: 'blank.link'
-        }
-      })
-
-    .headers__item
-      +footer({
-        isSimple: true,
-        description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
-        socials: {
-          twitter: 'blank.link',
-          facebook: 'blank.link',
-          instagram: 'blank.link'
-        }
-      })
+      .headers__item
+        +footer({
+          isSimple: true,
+          description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+          socials: {
+            twitter: 'blank.link',
+            facebook: 'blank.link',
+            instagram: 'blank.link'
+          }
+        })
