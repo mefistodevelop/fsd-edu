@@ -25,3 +25,4 @@ import './components/room-preview/room-preview';
 import './components/calendar/calendar';
 import './components/header/header';
 import './components/footer/footer';
+import './components/landing/landing';
