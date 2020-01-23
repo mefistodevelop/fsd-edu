@@ -10,39 +10,43 @@
   options.isButton - если true, добавляет в поле инпута кнопку отправки данных этого поля
 
 mixin input(options)
+
+  - const {name, type, placeholder, required, text, label, checked, value, isButton} = options
+
   .input
-    - if (options.type === "text" || options.type === "email" || options.type === "password" || options.type === "date")
-      - if (options.isButton)
-          form.input__form(action="blank-link" method="post")
-            label(class= "input__label input__label_button")= options.label  
-              input(class= options.label ? "input__field input__field_labeled" : "input__field",
-                    type = options.type, 
-                    name = options.name, 
-                    placeholder = options.placeholder,
-                    required = options.required
-              )
-              button(class = "input__button", type="submit") &#xe909
-      - else
-        label.input__label= options.label  
-          input(class= options.label ? "input__field input__field_labeled" : "input__field",
-                type = options.type,
-                name = options.name, 
-                placeholder = options.placeholder,
-                required = options.required,
+    if (type === "text" || type === "email" || type === "password" || type === "date")
+      if (isButton)
+        form.input__form(action="blank-link" method="post")
+          .input__label.input__label_button= label  
+            input(class= label ? "input__field input__field_labeled" : "input__field",
+                  type = type, 
+                  name = name, 
+                  placeholder = placeholder,
+                  required = required
+            )
+            button(class = "input__button", type="submit") &#xe909;
+      else
+        .input__label= label  
+          input(class= label ? "input__field input__field_labeled" : "input__field",
+                type = type,
+                name = name, 
+                placeholder = placeholder,
+                required = required,
                 autocomplete="on"
           )
         
 
-    - if (options.type === "radio" || options.type === "checkbox")
-      label(class = "input__label_" + options.type)
-        input(class = "input__" + options.type 
-              type = options.type, 
-              name = options.name, 
-              checked = options.checked, 
-              value = options.value
+    if (type === "radio" || type === "checkbox")
+      label(class = "input__label_" + type)
+        input(class = "input__" + type 
+              type = type, 
+              name = name, 
+              checked = checked, 
+              value = value
         )
-        div(class= options.style ? "input__inner input__inner_rich" : "input__inner")
-          - if (options.style === "rich")
-            p.input__title= options.label
-          div(class= options.style ? "input__text input__text_rich" : "input__text")= options.text
-        span(class = "input__checkmark input__checkmark_" + options.type)
+
+        div(class= style ? "input__inner input__inner_rich" : "input__inner")
+          if (style === "rich")
+            p.input__title= label
+          div(class= style ? "input__text input__text_rich" : "input__text")= text
+        span(class = "input__checkmark input__checkmark_" + type)
