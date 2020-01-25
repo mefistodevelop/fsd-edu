@@ -1,0 +1,30 @@
+@import '~/scss/utils/mixins';
+
+.auth {
+  flex: 1 0 auto;
+  min-width: 320px;
+  background: url('/assets/img/auth-background.jpg') center center/ cover no-repeat;
+
+  &_signin {
+    height: 683px;
+
+    @media (max-width: 992px) {
+      height: 550px;
+    }
+
+    @media (max-width: 576px) {
+      height: 450px;
+    }
+  }
+
+  &_signup {
+    height: 702px;
+  }
+
+  &__container {
+    @include container;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}

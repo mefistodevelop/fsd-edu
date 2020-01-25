@@ -1,0 +1,12 @@
+
+
+mixin auth(options)
+
+  if !options
+    - options = {}
+
+  - const mod = (options === 'signin') ? ' auth_signin' : (options === 'signup') ? ' auth_signup' : ''
+
+  section(class="auth" + mod)
+    .auth__container
+      block
