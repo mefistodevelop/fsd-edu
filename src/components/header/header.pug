@@ -1,5 +1,7 @@
-//- options.signin(str) - текст кнопки логин
-    options.signup(str) - текст кнопки регистрация
+//- options.signin(obj) - объект кнопки логин. Принимает: 
+                          text(str) - текст кнопки,
+                          href(str) - ссылка. Если параметр не указан, то создается button
+    options.signup(obj) - объект кнопки регистрация. Принимает те же параметры, что и signin
     options.isLogin(bool) - если true, отображает ссылку на профиль пользователя,
                             а если false - то кнопки login, register. По умолчанию false
     options.items(arr) - массив объектов - элементов меню, каждый объект принимает:
@@ -14,15 +16,30 @@ include ../button/button
 
 mixin header(options)
 
-  - const {items, user}  = options;
-  - const signIn = options.signin ? options.signin : "login";
-  - const signUp = options.signup? options.signup : "register";
-  - const mod = options.isUikit ? ' header__list_uikit' : ''
-  - const loginMod = options.isLogin ? ' header__item_logged-in' : ''
+  if !options
+    - options = {}
+
+  if !options.signin
+    - options.signin = {}
+
+  if !options.signup
+    - options.signup = {}
+
+  if !options.items
+    - options.items = []
+
+
+  - const {items, user, signin, signup}  = options;
+
+  - const signIn = signin.text ? signin.text : 'login';
+  - const signUp = signup.text ? signup.text : 'register';
+  - const mod = options.isUikit ? ' header__list_uikit' : '';
+  - const loginMod = options.isLogin ? ' header__item_logged-in' : '';
+
 
   header.header.js-header
     .header__container
-      a.header__logo(href="blank.link")
+      a.header__logo(href="index.html")
         img(src="assets/img/toxin-logo.svg" width="106" alt="логотип Toxin")
 
       nav.header__navigation
@@ -37,9 +54,9 @@ mixin header(options)
                 a.header__user(href= user.href)= user.name
               else
                 .header__button.header__button_login.js-header__button_login
-                  +button({type: "button", style: "bordered", text: signIn})
+                  +button({type: "button", href: signin.href, style: "bordered", text: signIn})
                 .header__button.header__button_registration.js-header__button_registration
-                  +button({type: "button", style: "default", text: signUp})
+                  +button({type: "button", href: signup.href, style: "default", text: signUp})
       
         .header__burger.js-header__burger
           .header__burger-line
