@@ -1,7 +1,14 @@
+//- link(string) - ссылка для кнопки "создать". Если указан параметр то создается тег a(anchor),
+                   если параметр не указан, то создается button
+
 include ../input/input
 include ../button/button
 
-mixin sign-in
+mixin sign-in(link)
+
+  if !link
+    - link = ''
+
   .sign-in
     h2.sign-in__title Войти
     form(class="sign-in__form" action="blank.link" method="post")
@@ -14,4 +21,4 @@ mixin sign-in
     .sign-in__footer
       span.sign-in__footer-text Нет аккаунта на Toxin?
       .sign-in__footer-button
-        +button({href: "signup.html", style: "bordered", text: "создать"})
+        +button({href: link, type: 'button', style: "bordered", text: "создать"})

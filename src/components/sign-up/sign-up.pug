@@ -1,8 +1,16 @@
+//- link(str) - ссылка для кнопки "войти". Если указан параметр то создается тег a(anchor),
+                если параметр не указан, то создается button
+
 include ../input/input
 include ../toggle/toggle
 include ../button/button
 
-mixin sign-up
+mixin sign-up(link)
+
+  if !link
+    - link = ''
+
+
   .sign-up
     h2.sign-up__title Регистрация аккаунта
     form(class="sign-up__form" action="blank.link" method="post")
@@ -32,6 +40,6 @@ mixin sign-up
     .sign-up__footer
       span.sign-up__footer-text Уже есть аккаунт на Toxin
       .sign-up__footer-button
-        +button({type: "button", style: "bordered", text: "войти"}) 
+        +button({type: "button", href: link, style: "bordered", text: "войти"}) 
 
     

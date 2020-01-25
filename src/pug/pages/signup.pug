@@ -2,11 +2,11 @@ extends ../templates/main
 include ../../components/auth/auth
 include ../../components/sign-up/sign-up
 
+
 block title
   | Зарегистрироваться
-
 
 block content
   +auth('signup')
     h1.visually-hidden Регистрация на сайте Toxin
-    +sign-up
+    +sign-up('signin.html')
