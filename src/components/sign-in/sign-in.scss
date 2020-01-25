@@ -1,5 +1,5 @@
-@import "../../scss/utils/vars.scss";
-@import "../../scss/utils/mixins.scss";
+@import '~/scss/utils/vars';
+@import '~/scss/utils/mixins';
 
 .sign-in {
   @include card;
@@ -27,15 +27,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     &-text {
       padding-top: 12px;
 
       @media (max-width: 420px) {
         font-size: 1.1em;
+        padding-top: 15px;
       }
     }
+    
     &-button {
       @include bordered-button;
+      @media (max-width: 350px) {
+        max-width: 90px;
+      }
     }
   }
 
