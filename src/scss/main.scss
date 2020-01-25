@@ -15,16 +15,15 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: $montserrat;
   font-size: 14px;
-  display: flex;
-  flex-direction: column;
   height: 100%;
 }
 
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  height: 100%;
-
+.page-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
