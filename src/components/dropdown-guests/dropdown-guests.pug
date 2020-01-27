@@ -1,4 +1,6 @@
-mixin dropdown-guests(options)
+//- label - заголовок дропдауна
+
+mixin dropdown-guests(label)
   .dropdown-guests
-    label.dropdown-guests__label= options.label
+    label.dropdown-guests__label= label
       input(class="dropdown-guests__field" type="text" name="guests" placeholder="Сколько гостей" readonly)
