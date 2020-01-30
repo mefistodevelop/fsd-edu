@@ -1,0 +1,22 @@
+@import '~/scss/utils/vars';
+
+.diagram {
+  max-width: 311px;
+  font-size: 14px;
+
+  &__title {
+    margin: 0;
+    padding: 0;
+
+    font-family: $quicksand;
+    font-weight: 700;
+    font-size: 1.357em;
+    line-height: 1.263em;
+    color: $shade-100;
+  }
+
+  &__item {
+    width: 150px;
+  }
+
+}

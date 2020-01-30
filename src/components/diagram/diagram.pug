@@ -1,0 +1,35 @@
+mixin diagram
+  .diagram
+    h3.diagram__title Впечатления от номера
+
+  .diagram__item
+    svg.diagram__donut(width='100%', height= '100%', viewBox='0 0 42 42')
+      defs
+        linearGradient(id="gradient-main" x1="0" y1="0" x2="0" y2="100%")
+          stop(offset="0%" stop-color="#BC9CFF")
+          stop(offset="100%" stop-color="#8BA4F9")
+        
+        linearGradient(id="gradient-secondary" x1="0" y1="0" x2="0" y2="100%")
+          stop(offset="0%" stop-color="#6FCF97")
+          stop(offset="100%" stop-color="#66D2EA")
+        
+        linearGradient(id="gradient-third" x1="0" y1="0" x2="0" y2="100%")
+          stop(offset="0%" stop-color="#FFE39C")
+          stop(offset="100%" stop-color="#FFBA9C")
+        
+        linearGradient(id="gradient-fourth" x1="0" y1="0" x2="0" y2="100%")
+          stop(offset="0%" stop-color="#919191")
+          stop(offset="100%" stop-color="#3D4975")
+
+
+      circle.diagram__donat-hole(cx='21', cy='21', r='15.9154943', fill='#fff')
+      circle.diagram__donut-segment(cx="21", cy="21", r="15.9154943", fill="transparent", stroke="url(#gradient-main)", stroke-width="1", stroke-dasharray="23 78", stroke-dashoffset="25")
+      circle.diagram__donut-segment(cx="21", cy="21", r="15.9154943", fill="transparent", stroke="url(#gradient-secondary)", stroke-width="1", stroke-dasharray="24 77", stroke-dashoffset="0")
+      circle.diagram__donut-segment(cx="21", cy="21", r="15.9154943", fill="transparent", stroke="url(#gradient-third)", stroke-width="1", stroke-dasharray="50 50", stroke-dashoffset="75")      
+    
+
+    //- ul.diagram__legend
+    //-   li.diagram__legend-item Великолепно
+    //-   li.diagram__legend-item Хорошо
+    //-   li.diagram__legend-item Удовлетворительно
+    //-   li.diagram__legend-item Разочарован
