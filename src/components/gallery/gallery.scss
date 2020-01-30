@@ -1,0 +1,20 @@
+.gallery {
+  margin: 0;
+  padding: 0;
+  min-width: 280px;
+  display: flex;
+
+  &__big {
+    max-width: 981px;
+  }
+
+  &__small {
+    max-width: 459px;
+  }
+  
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
