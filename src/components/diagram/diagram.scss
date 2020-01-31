@@ -1,12 +1,14 @@
 @import '~/scss/utils/vars';
 
 .diagram {
-  max-width: 311px;
+  // max-width: 311px;
   font-size: 14px;
 
   &__title {
     margin: 0;
     padding: 0;
+    margin-bottom: 3px;
+    padding-left: 18px;
 
     font-family: $quicksand;
     font-weight: 700;
@@ -15,8 +17,87 @@
     color: $shade-100;
   }
 
+  &__item-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
   &__item {
-    width: 150px;
+    position: relative;
+    width: 153px;
+  }
+
+  &__text {
+    position: absolute;
+    top: 54px;
+    left: 48px;
+    margin: 0;
+    padding: 0;
+
+    font-weight: 700;
+    font-family: $montserrat;
+    font-size: 14px;
+    line-height: 15px;
+    color: $main;
+    text-align: center;
+  }
+
+  &__counter {
+    display: block;
+
+    font-family: $quicksand;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &__legend {
+    margin: 0;
+    padding: 0;
+
+    margin-top: 28px;
+    margin-left: 15px;
+    padding-left: 15px;
+    max-width: 161px;
+
+    font-family: $montserrat;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $shade-75;
+
+    list-style: none;
+  }
+
+
+  &__legend-item {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 7px;
+      left: -15px;
+
+      border-radius: 50%;
+    }
+
+    &:nth-of-type(1)::before {
+      background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+    }
+
+    &:nth-of-type(2)::before {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    }
+
+    &:nth-of-type(3)::before {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+
+    &:nth-of-type(4)::before {
+      background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    }
   }
 
 }
