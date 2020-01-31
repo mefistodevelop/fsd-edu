@@ -9,6 +9,6 @@ mixin rooms-card
       .rooms-card__dropdowns
         +dropdown-date({label: "прибытие", name: "arriving"})
         +dropdown-date({label: "выезд", name: "leaving"})
-        +dropdown-guests({label: "гости"})
+        +dropdown-guests("гости")
       .rooms-card__button
         +button({type: "submit", style: "big", text: "подобрать номер"})

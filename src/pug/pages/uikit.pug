@@ -41,7 +41,7 @@ block content
               +input({type: "text", name: "text", placeholder: "This is pretty awesome", label:"text field"})
             
             .form-elements__field
-              +dropdown-guests({label: "dropdown"})
+              +dropdown-guests("dropdown")
             
             .form-elements__field         
               +input({type: "text", name: "date", placeholder: "ДД.ММ.ГГГГ", label: "masked text field"})
@@ -158,7 +158,7 @@ block content
             .form-elements__dropdown-rooms
               +dropdown({label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты']})
             .form-elements__dropdown-guests
-              +dropdown-guests({label: "dropdown"})
+              +dropdown-guests("dropdown")
 
 
           .form-elements__lists
