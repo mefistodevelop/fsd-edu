@@ -1,4 +1,4 @@
-@import "../../scss/utils/vars.scss";
+@import '~/scss/utils/vars';
 
 .feature {
   display: flex;
@@ -19,17 +19,17 @@
 
     &_smile {
       &::before {
-        content: "\e908";
+        content: '\e908';
       }
     }
     &_city {
       &::before {
-        content: "\e907";
+        content: '\e907';
       }
     }
     &_fire {
       &::before {
-        content: "\e902";
+        content: '\e902';
       }
     }
   }
