@@ -1,0 +1,79 @@
+@import '~/scss/utils/vars';
+@import '~/scss/utils/mixins';
+
+.room {
+  &__gallery {
+    margin: 0 auto;
+    margin-bottom: 70px;
+  }
+
+  &__container {
+    @include container;
+    display:  grid;
+    grid-template-columns: minmax(auto, 672px) auto;
+    grid-auto-rows: minmax(273px, auto) minmax(306px, auto) 1fr;
+    column-gap: 70px;
+    row-gap: 30px;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+
+    font-family: $quicksand;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    color: $shade-100;
+  }
+
+  &__features {
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    > :last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__diagram {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: end;
+  }
+
+  &__feedbacks {
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    > :nth-child(2) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__rules {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    max-width: 292px;
+  }
+
+  &__cancel {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    max-width: 341px;
+    justify-self: end;
+    margin-bottom: 70px;
+
+    &-text {
+      font-size: 14px;
+      line-height: 24px;
+      color: $shade-75;
+    }
+  }
+
+  &__booking-card {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+}
