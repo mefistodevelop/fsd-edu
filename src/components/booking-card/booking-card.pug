@@ -3,6 +3,7 @@
     options.price - цена номера в сутки
 
 include ../dropdown-date/dropdown-date
+include ../dropdown-guests/dropdown-guests
 include ../button/button
 include ../room-header/room-header
 
@@ -14,7 +15,7 @@ mixin booking-card(options)
       .booking-card__dropdowns
         +dropdown-date({label: "прибытие", name: "arriving"})
         +dropdown-date({label: "выезд", name: "leaving"})
-        +dropdown-guests({label: "гости", name: "guests"})
+        +dropdown-guests('гости')
 
       .booking-card__taxes
         .booking-card__taxes-block
