@@ -1,0 +1,16 @@
+extends ../templates/main
+include ../../components/gallery/gallery
+include ../../components/diagram/diagram
+
+block title
+  | Сведения о номере
+
+block content
+  .room__container
+    +gallery([
+      {src: 'assets/img/room-bed.jpg', alt: 'Основной вид комнаты'},
+      {src: 'assets/img/room-entry.jpg'},
+      {src: 'assets/img/room-window.jpg'},
+    ])
+
+    +diagram
