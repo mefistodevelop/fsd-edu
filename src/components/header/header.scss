@@ -67,6 +67,10 @@
 
     &_uikit {
       min-width: 524px;
+
+      > .header__item {
+        margin-right: 28px;
+      }
     }
 
     &_visible {
@@ -78,7 +82,7 @@
 
 
   &__item {
-    margin-right: 28px;
+    margin-right: 22px;
     &:nth-last-child(2),
     &:last-of-type {
       margin-right: 0;
@@ -112,7 +116,7 @@
 
     &_logged-in {
       border-left: 1px solid rgba(31, 32, 65, 0.1);
-      margin-left: 32px;
+      margin-left: 34px;
 
       @media (max-width: 992px) {
         border: none;
@@ -121,7 +125,7 @@
     }
 
     &_auth {
-      padding-left: 30px;
+      padding-left: 27px;
 
       @media (max-width: 992px) {
         order: 1;

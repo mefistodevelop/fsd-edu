@@ -49,11 +49,11 @@
 
 @mixin container {
   display: flex;
-  max-width: 1178px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding-left: 17px;
 
   @media (max-width: 1250px) {
+    padding-left: 17px;
     padding-right: 17px;
   }
 }
