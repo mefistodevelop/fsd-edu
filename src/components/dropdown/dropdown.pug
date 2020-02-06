@@ -1,3 +1,8 @@
+//- options.label(str) - заголовок
+    options.items[] - массив строк - элементов списка
+
+    Пример вызова: +dropdown({label: 'dropdown', items: ['спальни', 'кровати']})
+
 mixin dropdown(options)
   .dropdown
     label.dropdown__label= options.label
