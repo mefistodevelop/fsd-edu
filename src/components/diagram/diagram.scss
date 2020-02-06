@@ -1,7 +1,6 @@
 @import '~/scss/utils/vars';
 
 .diagram {
-  // max-width: 311px;
   font-size: 14px;
 
   &__title {
@@ -24,45 +23,41 @@
 
   &__item {
     position: relative;
-    width: 153px;
+    width: 10.929em;
   }
 
-  &__text {
-    position: absolute;
-    top: 54px;
-    left: 48px;
-    margin: 0;
-    padding: 0;
-
+  &__caption {
+    transform: translateY(10%);
     font-weight: 700;
-    font-family: $montserrat;
-    font-size: 14px;
-    line-height: 15px;
-    color: $main;
-    text-align: center;
   }
 
   &__counter {
-    display: block;
-
     font-family: $quicksand;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 0.44em;
+    fill: $main;
   }
+
+  &__text {
+    font-family: $montserrat;
+    font-size: 0.29em;
+    fill: $main;
+    transform: translateY(5px);
+  }
+
 
   &__legend {
     margin: 0;
     padding: 0;
 
-    margin-top: 28px;
-    margin-left: 15px;
-    padding-left: 15px;
-    max-width: 161px;
+    margin-top: 2em;
+    margin-left: 1.071em;
+    padding-left: 1.071em;
+    max-width: 11.5em;
 
     font-family: $montserrat;
     font-weight: 400;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 1.714em;
     color: $shade-75;
 
     list-style: none;
@@ -75,10 +70,10 @@
     &::before {
       content: '';
       position: absolute;
-      width: 10px;
-      height: 10px;
-      top: 7px;
-      left: -15px;
+      width: 0.714em;
+      height: 0.714em;
+      top: 0.5em;
+      left: -1.071em;
 
       border-radius: 50%;
     }
