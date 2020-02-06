@@ -1,0 +1,55 @@
+.search {
+
+  &__container {
+    @include container;
+    padding-top: 30px;
+  }
+
+  &__filter {
+    max-width: 266px;
+    margin-right: 60px;
+    
+
+    > :not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__dropdowns {
+    > :first-child {
+      margin-bottom: 21px;
+    }
+  }
+
+  &__checkboxes-label,
+  &__rich-checkboxes-label {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+    font-family: $montserrat;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $shade-100;
+  }
+
+  &__checkbox,
+  &__rich-checkbox {
+    margin-bottom: 8px;
+
+    :last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+
+  &__previews {
+    width: 834px;
+    // min-height: 1091px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+}

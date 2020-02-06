@@ -1,0 +1,167 @@
+extends ../templates/main 
+include ../../components/dropdown-date/dropdown-date
+include ../../components/dropdown-guests/dropdown-guests
+include ../../components/range-slider/range-slider
+include ../../components/checkbox-list/checkbox-list
+include ../../components/checkbox-list/checkbox-list
+include ../../components/dropdown/dropdown
+include ../../components/list/list
+include ../../components/room-preview/room-preview
+
+
+block title
+  | Поиск номеров
+
+block content
+    .search__container
+      .search__filter
+        .search__dropdowns
+          +dropdown-date({type: 'filter', label: 'даты пребывания в отеле', name: 'dates'})
+          +dropdown-guests('гости')
+
+        +range-slider('диапазон цены')
+
+        .search__checkboxes
+          h3.search__checkboxes-label Checkbox Buttons
+          .search__checkbox
+            +input({type: "checkbox", text: "Можно курить", name: "smoke"})
+          
+          .search__checkbox
+            +input({type: "checkbox", text: "Можно с питомцами", name: "pets", checked: "checked"})
+          
+          .search__checkbox
+            +input({type: "checkbox", text: "Можно пригласить гостей (до 10 человек)", name: "guests", checked: "checked"})
+
+
+
+        .search__rich-checkboxes
+          h3.search__rich-checkboxes-label Rich Checkbox Buttons
+          .search__rich-checkbox
+            +input({type: 'checkbox', style: 'rich', label: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.', name: 'corridor'})
+          .seacrh-elements__rich-checkbox
+            +input({type: 'checkbox', style: 'rich', label: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист и проводит до номера.', name: 'helper'})
+
+        +dropdown({label: 'удобства номера', items: ['спальни', 'кровати', 'ванные комнаты']})
+        +checkbox-list({
+                  title: 'дополнительные удобства',
+                  items: [
+                    {text:'Завтрак'}, 
+                    {text:'Письменный стол', checked: 'checked'}, 
+                    {text:'Стул для кормления', checked: 'checked'},
+                    {text:'Кроватка', checked: 'checked'},
+                    {text:'Телевизор'},
+                    {text:'Шампунь'},
+                    {text:'Телевизор'},
+                    {text:'Шампунь'}
+                  ]
+                })
+
+      section.search__previews
+        +room-preview({
+          rate: 5,
+          feedbacks: 145,
+          number: 888,
+          isLuxe: true,
+          price: '9 990',
+          slides: [{src: '/assets/img/room-1.jpg'}]
+        })
+
+        +room-preview({
+          rate: 4,
+          feedbacks: 65,
+          number: 840,
+          isLuxe: false,
+          price: '9 990',
+          slides: [{src: '/assets/img/room-2.jpg'}]
+        })
+
+        +room-preview({
+          rate: 3,
+          feedbacks: 35,
+          number: 980,
+          isLuxe: true,
+          price: '8 500',
+          slides: [{src: '/assets/img/room-3.jpg'}]
+        })
+
+        +room-preview({
+          rate: 5,
+          feedbacks: 19,
+          number: 856,
+          isLuxe: false,
+          price: '7 300',
+          slides: [{src: '/assets/img/room-4.jpg'}]
+        })
+
+        +room-preview({
+          rate: 4,
+          feedbacks: 44,
+          number: 740,
+          isLuxe: false,
+          price: '6 000',
+          slides: [{src: '/assets/img/room-5.jpg'}]
+        })
+
+        +room-preview({
+          rate: 3,
+          feedbacks: 56,
+          number: 982,
+          isLuxe: false,
+          price: '5 800',
+          slides: [{src: '/assets/img/room-6.jpg'}]
+        })
+
+        +room-preview({
+          rate: 5,
+          feedbacks: 45,
+          number: 678,
+          isLuxe: false,
+          price: '5 500',
+          slides: [{src: '/assets/img/room-7.jpg'}]
+        })
+
+        +room-preview({
+          rate: 4,
+          feedbacks: 39,
+          number: 450,
+          isLuxe: false,
+          price: '5 300',
+          slides: [{src: '/assets/img/room-8.jpg'}]
+        })
+
+        +room-preview({
+          rate: 3,
+          feedbacks: 77,
+          number: 350,
+          isLuxe: false,
+          price: '5 000',
+          slides: [{src: '/assets/img/room-9.jpg'}]
+        })
+
+        +room-preview({
+          rate: 5,
+          feedbacks: 25,
+          number: 666,
+          isLuxe: false,
+          price: '5 000',
+          slides: [{src: '/assets/img/room-10.jpg'}]
+        })
+
+        +room-preview({
+          rate: 3,
+          feedbacks: 15,
+          number: 444,
+          isLuxe: false,
+          price: '5 000',
+          slides: [{src: '/assets/img/room-11.jpg'}]
+        })
+
+        +room-preview({
+          rate: 3,
+          feedbacks: 55,
+          number: 352,
+          isLuxe: false,
+          price: '5 000',
+          slides: [{src: '/assets/img/room-7.jpg'}]
+        })
+
