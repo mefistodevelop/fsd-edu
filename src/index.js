@@ -1,5 +1,6 @@
 import './scss/main.scss';
 
+import './js/search';
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
