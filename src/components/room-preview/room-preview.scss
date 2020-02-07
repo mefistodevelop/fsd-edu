@@ -1,4 +1,4 @@
-@import "../../scss/utils/vars.scss";
+@import '~/scss/utils/vars';
 @import 'slick-carousel/slick/slick.scss';
 
 .room-preview {
@@ -46,7 +46,7 @@
         outline: none;
         
         &::before {
-          content: "\e90e";
+          content: '\e90e';
           display: none;
           position: absolute;
           top: -1px;
@@ -70,7 +70,7 @@
       &-next {
         right: 0;
         &::before {
-          content: "\e90d";
+          content: '\e90d';
           right: 0;
         }
       }
@@ -88,7 +88,7 @@
         > li {
           position: relative;
           &::before {
-            content: "";
+            content: '';
             position: absolute;
             top: 8px;
             left: 8px;
