@@ -45,9 +45,10 @@
     transition: .5s;
 
     @media (max-width: 992px) {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: -100%;
+      bottom: 0;
 
       padding: 3%;
       min-width: 10px;
@@ -62,6 +63,7 @@
       border-bottom: 1px solid $shade-25;
       box-shadow: 5px 5px 5px $shade-25;
       z-index: 30;
+      overflow-y: auto;
     }
 
     @media (max-width: 576px) {
@@ -210,6 +212,8 @@
     justify-content: center;
     width: 44px;
     height: 100%;
+    z-index: 30;
+
     @media (max-width: 992px) {
       display: flex;
     }
@@ -230,6 +234,7 @@
     &_open {
 
       :first-child {
+        background-color: #fff;
         transform: rotate(45deg) translateY(4px) translateX(5px);
       }
 
@@ -238,8 +243,28 @@
       }
 
       :last-child {
+        background-color: #fff;
         transform: rotate(-45deg);
       }
     }
   }
+}
+
+.fade {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 20;
+  display: none;
+
+  &_visible {
+    display: block;
+  }
+}
+
+.unscrollable {
+  overflow: hidden;
 }

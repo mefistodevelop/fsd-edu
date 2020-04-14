@@ -11,6 +11,8 @@ window.$ = window.jQuery = require('jquery');
   const $buttonReg = $('.js-header__button_registration');
   const $navList = $('.js-header__list');
   const $headerLink = $('.header__link');
+  const $fade = $('.js-fade');
+  const $body = $('body');
 
   $header.each(function(i){
     
@@ -19,8 +21,10 @@ window.$ = window.jQuery = require('jquery');
     $($burger).eq(i).on('click.header-burger', function(){
       $(this).toggleClass('header__burger_open');
       $(this).prev().toggleClass('header__list_visible');
-      $($buttonLogin).toggleClass('header__button_ghost').children().toggleClass('button_ghost');
-      $($buttonReg).children().toggleClass('button_ghost');
+      $buttonLogin.toggleClass('header__button_ghost').children().toggleClass('button_ghost');
+      $buttonReg.children().toggleClass('button_ghost');
+      $fade.toggleClass('fade_visible');
+      $body.toggleClass('unscrollable');
     });
   })
 
