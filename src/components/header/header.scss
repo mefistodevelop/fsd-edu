@@ -52,8 +52,11 @@
       padding: 3%;
       min-width: 10px;
       width: 50%;
+      height: 100vh;
       flex-direction: column;
+      flex-wrap: nowrap;
       align-items: center;
+      justify-content: unset;
       background: #ffffff;
       border-right: 1px solid $shade-25;
       border-bottom: 1px solid $shade-25;
@@ -90,6 +93,7 @@
 
     @media (max-width: 992px) {
       margin-right: 0;
+      margin-bottom: 10px;
       padding-top: 14px;
       padding-bottom: 14px;
       order: 2;
