@@ -19,14 +19,12 @@
 
   &__container {
     @include container;
+    height: 100%;
     flex-direction: column;
   }
 
-  &__card {
-    margin-bottom: 22.857em;
-  }
-
   &__description {
+    margin-top: auto;
     max-width: 297px;
     align-self: flex-end;
   }
