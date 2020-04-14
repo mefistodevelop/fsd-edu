@@ -5,9 +5,9 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs');
 
 const PATHS = {
-  src: path.join(__dirname, "../src"),
-  dist: path.join(__dirname, "../dist/"),
-  assets: "assets/" 
+  src: path.join(__dirname, '../src'),
+  dist: path.join(__dirname, '../dist/'),
+  assets: 'assets/' 
 }
 
 const PAGES_DIR = `${PATHS.src}/pug/pages`;
@@ -18,41 +18,35 @@ module.exports = {
     paths: PATHS
   },
 
+  context: path.resolve(__dirname, '../src'),
+
   entry: {
     app: PATHS.src
   },
   output: {
     filename: `${PATHS.assets}js/[name].js`,
     path: PATHS.dist,
-    publicPath: '/'
   },
 
   module: {
     rules: [
       { 
         test: /\.pug$/, 
-        loader: "pug-loader" 
+        loader: 'pug-loader' 
       },
       { 
         test: /\.js$/, 
         exclude: /node_modules/, 
-        loader: "babel-loader" 
+        loader: 'babel-loader' 
       },
-      {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]'
-        }
-      }, 
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         loader: 'file-loader',
         options: {
-          name: "[name].[ext]",
+          name: '[name].[ext]',
           outputPath: `${PATHS.assets}img`,
         },
-        exclude: `${PATHS.src}/fonts`
+        exclude: /fonts/,
       },
       {
         test: /\.css$/,
@@ -64,6 +58,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
+              url: false,
             }
           },
         ],
@@ -79,12 +74,19 @@ module.exports = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
+              url: false,
             }
           },
           {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
+            }
+          },
+          {
+            loader: 'resolve-url-loader',
+            options:{
+              engine:'rework',
             }
           },
           // Compiles Sass to CSS
@@ -101,7 +103,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "~": path.resolve(__dirname, '../src')
+      '~': path.resolve(__dirname, '../src')
     }
   },
   
@@ -110,20 +112,13 @@ module.exports = {
       filename: `${PATHS.assets}css/[name].css`,
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
-    // new htmlWebpackPlugin({
-    //   hash: false,
-    //   template: `${PATHS.src}/index.html`,
-    //   filename: "./index.html"
-    // }),
     new copyWebpackPlugin([
       { from: `${PATHS.src}/img/`, to: `${PATHS.assets}img/` },
       { from: `${PATHS.src}/fonts/`, to: `${PATHS.assets}fonts/` },
-      { from: `${PATHS.src}/static/`, to: "" },
+      { from: `${PATHS.src}/static/`, to: '' },
     ]),
 
-    // Automatic creation any html pages (Don't forget to RERUN dev server)
-    // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
-    // best way to create pages: https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
+    // Automatic creation any html pages
     ...PAGES.map(page => new htmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug/,'.html')}`
