@@ -1,9 +1,0 @@
-//- options.text - текст подписи
-    options.name - имя инпута
-    options.checked - состояние переключателя (checked: "checked" - включен)
-
-mixin toggle(options)
-  .toggle
-    label.toggle__label= options.text
-      input.toggle__item(type="checkbox" name= options.name checked= options.checked)
-      span.toggle__switch
