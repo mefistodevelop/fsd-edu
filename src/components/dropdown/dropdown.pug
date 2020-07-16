@@ -3,9 +3,9 @@
 
     Пример вызова: +dropdown({label: 'dropdown', items: ['спальни', 'кровати']})
 
-mixin dropdown(options)
+mixin dropdown({ label, items })
   .dropdown
-    label.dropdown__label= options.label
+    label.dropdown__label= label
       span.dropdown__arrow &#xe901
       input(class="dropdown__top",
              type="text",
@@ -13,7 +13,7 @@ mixin dropdown(options)
              readonly)
       .dropdown__menu.hidden
         ul.dropdown__items
-          each item in options.items
+          each item in items
             li.dropdown__item
               .dropdown__element= item
               .dropdown__quantity
