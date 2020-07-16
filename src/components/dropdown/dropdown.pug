@@ -7,11 +7,12 @@
 mixin dropdown({ label, items, placeholder })
   .dropdown
     label.dropdown__label= label
-      span.dropdown__arrow &#xe901
-      input(class="dropdown__top",
-             type="text",
-             placeholder= placeholder,
-             readonly)
+      .dropdown__field-wrapper
+        input(class="dropdown__top",
+              type="text",
+              placeholder= placeholder,
+              readonly)
+        .dropdown__arrow &#xe901
       .dropdown__menu.hidden
         ul.dropdown__items
           each item in items

@@ -5,24 +5,20 @@ class Dropdown {
   constructor(node) {
     this.node = node;
     this.label = this.node.children[0];
-    this.dropdownArrow = findChild(this.label, 'dropdown__arrow');
+    this.wrapper = findChild(this.label, 'dropdown__field-wrapper');
+    this.dropdownArrow = findChild(this.wrapper, 'dropdown__arrow');
     this.menu = findChild(this.label, 'dropdown__menu');
-    this.node.addEventListener('click', this.handleClick);
     this.itemsList = findChild(this.menu, 'dropdown__items');
-    this.addCountHandler();
+    this.node.addEventListener('click', this.toggleMenuVisibility);
     this.dropdownArrow.addEventListener('click', this.toggleMenuVisibility);
+    this.addCountHandler();
   }
 
-  toggleMenuVisibility = () => {
-    this.menu.classList.toggle('hidden');
-  }
+  toggleMenuVisibility = () => this.menu.classList.toggle('hidden');
 
-  hideMenu = () => this.menu[0].classList.add('hidden');
+  hideMenu = () => this.menu.classList.add('hidden');
 
   handleClick = (e) => {
-    if (!this.node.contains(e.target) && !this.menu.classList.contains('hidden')) {
-      this.hideMenu();
-    }
     this.toggleMenuVisibility();
   };
 
