@@ -5,10 +5,12 @@ class Dropdown {
   constructor(node) {
     this.node = node;
     this.label = this.node.children[0];
+    this.dropdownArrow = findChild(this.label, 'dropdown__arrow');
     this.menu = findChild(this.label, 'dropdown__menu');
     this.node.addEventListener('click', this.handleClick);
     this.itemsList = findChild(this.menu, 'dropdown__items');
     this.addCountHandler();
+    this.dropdownArrow.addEventListener('click', this.toggleMenuVisibility);
   }
 
   toggleMenuVisibility = () => {
