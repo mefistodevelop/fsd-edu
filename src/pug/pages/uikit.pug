@@ -156,9 +156,9 @@ block content
         .form-elements__row.form-elements__row_middle
           .form-elements__row-dropdowns
             .form-elements__dropdown-rooms
-              +dropdown({label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты']})
-            .form-elements__dropdown-guests
-              +dropdown-guests("dropdown")
+              +dropdown({placeholder: "Выберите удобства", label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты']})
+            .form-elements__dropdown-rooms
+              +dropdown({placeholder: "Сколько гостей", label: 'dropdown', items: ['взрослые', 'дети', 'младенцы']})
 
 
           .form-elements__lists

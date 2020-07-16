@@ -1,16 +1,14 @@
+import { findChild } from "./dropdown";
+
 export class DropdownCounter {
   constructor(elem) {
     this.elem = elem;
-    this.counter = this.findChild(this.elem, 'dropdown__quantity');
-    this.btnPlus = this.findChild(this.counter, 'dropdown__control_plus');
-    this.btnMinus = this.findChild(this.counter, 'dropdown__control_minus');
-    this.countElem = this.findChild(this.counter, 'dropdown__score');
+    this.counter = findChild(this.elem, 'dropdown__quantity');
+    this.btnPlus = findChild(this.counter, 'dropdown__control_plus');
+    this.btnMinus = findChild(this.counter, 'dropdown__control_minus');
+    this.countElem = findChild(this.counter, 'dropdown__score');
     this.counter.addEventListener('click', this.handleClick);
     this.score = 0;
-  }
-
-  findChild = (node, child) => {
-    return [...node.children].filter((ch) => ch.classList.contains(child))[0];
   }
 
   increaseScore = () => {

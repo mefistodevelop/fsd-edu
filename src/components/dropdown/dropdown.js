@@ -5,14 +5,10 @@ class Dropdown {
   constructor(node) {
     this.node = node;
     this.label = this.node.children[0];
-    this.menu = this.getElement('dropdown__menu');
+    this.menu = findChild(this.label, 'dropdown__menu');
     this.node.addEventListener('click', this.handleClick);
-    this.itemsList = [...this.menu.children].filter((child) => child.classList[0] === 'dropdown__items')[0];
+    this.itemsList = findChild(this.menu, 'dropdown__items');
     this.addCountHandler();
-  }
-
-  getElement = (elem) => {
-    return [...this.label.children].filter((child) => child.classList[0] === elem)[0];
   }
 
   toggleMenuVisibility = () => {
@@ -31,6 +27,10 @@ class Dropdown {
   addCountHandler = () => {
     [...this.itemsList.children].forEach((item) => new DropdownCounter(item));
   }
+}
+
+export function findChild(node, child) {
+  return [...node.children].filter((ch) => ch.classList.contains(child))[0];
 }
 
 document.addEventListener('DOMContentLoaded', () => {
