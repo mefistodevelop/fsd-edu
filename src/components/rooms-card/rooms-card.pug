@@ -1,5 +1,5 @@
 include ../dropdown-date/dropdown-date
-include ../dropdown-guests/dropdown-guests
+include ../dropdown/dropdown
 include ../button/button
 
 mixin rooms-card
@@ -9,6 +9,6 @@ mixin rooms-card
       .rooms-card__dropdowns
         +dropdown-date({label: "прибытие", name: "arriving"})
         +dropdown-date({label: "выезд", name: "leaving"})
-        +dropdown-guests("гости")
+        +dropdown({label: "гости", placeholder: "Сколько гостей", items: ['взрослые', 'дети', 'младенцы']})
       .rooms-card__button
         +button({type: "submit", style: "big", text: "подобрать номер"})
