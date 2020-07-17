@@ -13,8 +13,7 @@ mixin booking-card(options)
       .booking-card__header
         +room-header({number: options.number, isLuxe: options.isLuxe, price: options.price})
       .booking-card__dropdowns
-        +dropdown-date({label: "прибытие", name: "arriving"})
-        +dropdown-date({label: "выезд", name: "leaving"})
+        +dropdown-date()
         +dropdown-guests('гости')
 
       .booking-card__taxes

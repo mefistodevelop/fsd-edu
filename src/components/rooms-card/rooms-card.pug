@@ -8,7 +8,6 @@ mixin rooms-card
     form(class="rooms-card__form" action="blank.link" method="post")
       .rooms-card__dropdowns
         +dropdown-date({label: "прибытие", name: "arriving"})
-        +dropdown-date({label: "выезд", name: "leaving"})
         +dropdown({label: "гости", placeholder: "Сколько гостей", items: ['взрослые', 'дети', 'младенцы']})
       .rooms-card__button
         +button({type: "submit", style: "big", text: "подобрать номер"})
