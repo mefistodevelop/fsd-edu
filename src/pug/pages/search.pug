@@ -18,7 +18,7 @@ block content
       .search__filter
         .search__dropdowns
           +dropdown-date({type: 'filter', label: 'даты пребывания в отеле', name: 'dates'})
-          +dropdown-guests('гости')
+          +dropdown({placeholder: "Сколько гостей", label: 'гости', items: ['взрослые', 'дети', 'младенцы']})
 
         +range-slider('диапазон цены')
 

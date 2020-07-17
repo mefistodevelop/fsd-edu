@@ -3,7 +3,7 @@
     options.price - цена номера в сутки
 
 include ../dropdown-date/dropdown-date
-include ../dropdown-guests/dropdown-guests
+include ../dropdown/dropdown
 include ../button/button
 include ../room-header/room-header
 
@@ -14,7 +14,7 @@ mixin booking-card(options)
         +room-header({number: options.number, isLuxe: options.isLuxe, price: options.price})
       .booking-card__dropdowns
         +dropdown-date()
-        +dropdown-guests('гости')
+        +dropdown({placeholder: "Сколько гостей", label: 'гости', items: ['взрослые', 'дети', 'младенцы']})
 
       .booking-card__taxes
         .booking-card__taxes-block

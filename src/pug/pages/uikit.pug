@@ -41,7 +41,7 @@ block content
               +input({type: "text", name: "text", placeholder: "This is pretty awesome", label:"text field"})
             
             .form-elements__field
-              +dropdown-guests("dropdown")
+              +dropdown({placeholder: "Сколько гостей", label: 'гости', items: ['взрослые', 'дети', 'младенцы']})
             
             .form-elements__field         
               +input({type: "text", name: "date", placeholder: "ДД.ММ.ГГГГ", label: "masked text field"})
