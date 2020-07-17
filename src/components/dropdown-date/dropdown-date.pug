@@ -1,11 +1,31 @@
-//- options.type(str) - принимает значение filter(опционально). Создает дропдаун с диапозоном дат
-    options.label(str) - заголовок дропдауна
-    options.name - атрибут name поля input
+//- type(str) - принимает значение filter(опционально). Создает дропдаун с диапозоном дат
+    label(str) - заголовок дропдауна
+    name - атрибут name поля input
 
-mixin dropdown-date(options)
-  - const blockClassName = options.type === "filter" ? "dropdown-date dropdown-date_filter" : "dropdown-date"
-  - const inputClassName = options.type === "filter" ? "dropdown-date__field dropdown-date__field_filter" : "dropdown-date__field"
+mixin dropdown-date({ type, label, name } = {})
+  include ../calendar/calendar
+
+  - const blockClassName = type === "filter" ? "dropdown-date dropdown-date_filter" : "dropdown-date"
+  - const inputClassName = type === "filter" ? "dropdown-date__field dropdown-date__field_filter" : "dropdown-date__field"
   
-  div(class= blockClassName)
-    label.dropdown-date__label= options.label
-      input(class= inputClassName type="text" name= options.name placeholder="ДД.ММ.ГГГГ" readonly)
+  div(class="dropdown-date")
+    .dropdown-date__container
+      label.dropdown-date__label.dropdown-date__label_arrive Прибытие
+        input(
+          class="dropdown-date__field dropdown-date__field_arrive"
+          type="text"
+          name="arriveDate"
+          placeholder="ДД.ММ.ГГГГ"
+          readonly
+        )
+
+      label.dropdown-date__label.dropdown-date__label_depart Выезд
+        input(
+          class="dropdown-date__field dropdown-date__field_depart"
+          type="text"
+          name="departDate"
+          placeholder="ДД.ММ.ГГГГ"
+          readonly
+        )    
+    .dropdown-date__calendar.dropdown-date__calendar_hidden
+      +calendar

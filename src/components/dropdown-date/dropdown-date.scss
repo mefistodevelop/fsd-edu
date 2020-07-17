@@ -1,13 +1,25 @@
-@import "../../scss/utils/vars.scss";
+@import '../../scss/utils/vars.scss';
 
 .dropdown-date {
-  max-width: 150px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+
   &_filter {
     max-width: 266px;
   }
-  
-  &__label {
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
+  }
+
+  &__label {
+    margin-right: 20px;
+    width: 100%;
+    min-width: 150px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,13 +28,17 @@
     line-height: 15px;
     text-transform: uppercase;
     color: $shade-100;
-    
+
+    :last-of-type {
+      margin-right: 0;
+    }
+
     &::after {
       position: absolute;
       right: 10px;
       bottom: 14px;
 
-      content: "\e901";
+      content: '\e901';
       font-family: icomoon;
       font-size: 24px;
       color: $shade-50;
@@ -46,10 +62,21 @@
     line-height: 18px;
     color: $shade-75;
     outline: none;
+
     &:hover,
     &:focus {
       border-color: $shade-50;
       cursor: pointer;
+    }
+  }
+
+  &__calendar {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+
+    &_hidden {
+      display: none;
     }
   }
 }
